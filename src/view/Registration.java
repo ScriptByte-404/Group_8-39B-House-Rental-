@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import controller.UserController;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+import model.logindata;
 
 /**
  *
  * @author Safal
  */
 public class Registration extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Registration.class.getName());
 
     /**
@@ -61,6 +65,13 @@ public class Registration extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+<<<<<<< Updated upstream
+=======
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JPasswordField();
+        btnNext = new javax.swing.JButton();
+>>>>>>> Stashed changes
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1536, 864));
@@ -165,7 +176,7 @@ public class Registration extends javax.swing.JFrame {
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(this::jButton1ActionPerformed);
         getContentPane().add(jButton1);
-        jButton1.setBounds(820, 710, 160, 50);
+        jButton1.setBounds(660, 710, 160, 50);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
         getContentPane().add(jLabel8);
@@ -270,17 +281,98 @@ public class Registration extends javax.swing.JFrame {
         getContentPane().add(jLabel29);
         jLabel29.setBounds(60, 740, 680, 20);
 
+<<<<<<< Updated upstream
+=======
+        jTextField4.addActionListener(this::jTextField4ActionPerformed);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(650, 390, 650, 50);
+
+        jTextField5.addActionListener(this::jTextField5ActionPerformed);
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(650, 510, 650, 50);
+
+        txtPassword.addActionListener(this::txtPasswordActionPerformed);
+        getContentPane().add(txtPassword);
+        txtPassword.setBounds(650, 610, 650, 50);
+
+        btnNext.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnNext.setForeground(new java.awt.Color(51, 51, 51));
+        btnNext.setText("Continue");
+        btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnNext.addActionListener(this::btnNextActionPerformed);
+        getContentPane().add(btnNext);
+        btnNext.setBounds(1120, 710, 160, 50);
+
+>>>>>>> Stashed changes
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+<<<<<<< Updated upstream
+=======
+    String username = jTextField4.getText().trim();
+    String email = jTextField5.getText().trim();
+    String password = new String(txtPassword.getPassword()).trim();
+
+    // basic validation
+    if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill all fields!");
+        return;
+    }
+
+    try {
+        logindata user = new logindata(username, email, password);
+
+        UserController controller = new UserController();
+
+        boolean success = controller.registerUser(user);
+
+        if (success) {
+            JOptionPane.showMessageDialog(this, "User Registered Successfully!");
+            
+            // clear fields after success
+            jTextField4.setText("");
+            jTextField5.setText("");
+            txtPassword.setText("");
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Registration Failed!");
+        }
+
+    } catch (HeadlessException e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+
+
+    Login login = new Login();
+    login.setVisible(true);
+
+    this.dispose();     // TODO add your handling code here:
+    }//GEN-LAST:event_btnNextActionPerformed
+
+>>>>>>> Stashed changes
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -302,7 +394,9 @@ public class Registration extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new Registration().setVisible(true));
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnNext;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -336,5 +430,11 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+<<<<<<< Updated upstream
+=======
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JPasswordField txtPassword;
+>>>>>>> Stashed changes
     // End of variables declaration//GEN-END:variables
 }

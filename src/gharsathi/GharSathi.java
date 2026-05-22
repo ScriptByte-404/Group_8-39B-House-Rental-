@@ -1,35 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package gharsathi;
 
 import Database.MysqlConnector;
-import database.db;
+import java.sql.Connection;
 
-/**
- *
- * @author Safal
- */
 public class GharSathi {
 
-
-
-/**
- *
- * @author Safal
- */
-public class JavaApplication1 {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        db database = new MysqlConnector();
-        database.openConnection();
+
+        MysqlConnector db = new MysqlConnector();
+
+        Connection conn = db.openConnection();
+
+        if (conn != null) {
+
+            System.out.println("Program running successfully");
+
+        } else {
+
+            System.out.println("Database connection failed");
+
+        }
+
     }
-    
-}
 }
 
