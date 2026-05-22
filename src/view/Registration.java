@@ -47,9 +47,6 @@ public class Registration extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -61,6 +58,9 @@ public class Registration extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1536, 864));
@@ -144,7 +144,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel3.setText("Email/Phonenumber");
         jLabel3.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(650, 460, 330, 40);
+        jLabel3.setBounds(650, 460, 220, 40);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel4.setText("Create account  using username ,email  ");
@@ -169,36 +169,15 @@ public class Registration extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(690, 380, 60, 60);
+        jLabel8.setBounds(1230, 390, 40, 40);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__1_-removebg-preview_1.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(680, 500, 60, 60);
+        jLabel9.setBounds(1230, 510, 60, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__2_-removebg-preview_1.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(690, 610, 60, 60);
-
-        jLabel14.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(36, 0, 0));
-        jLabel14.setText("                       Enter your username");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(650, 380, 650, 60);
-
-        jLabel13.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(36, 0, 0));
-        jLabel13.setText("                       Password");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(650, 610, 650, 60);
-
-        jLabel15.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(36, 0, 0));
-        jLabel15.setText("                       Enter your email/phonenumber");
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel15);
-        jLabel15.setBounds(650, 500, 650, 60);
+        jLabel2.setBounds(1240, 610, 50, 50);
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel12.setText("WELCOME TO");
@@ -270,12 +249,36 @@ public class Registration extends javax.swing.JFrame {
         getContentPane().add(jLabel29);
         jLabel29.setBounds(60, 740, 680, 20);
 
+        jTextField3.addActionListener(this::jTextField3ActionPerformed);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(650, 610, 650, 50);
+
+        jTextField4.addActionListener(this::jTextField4ActionPerformed);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(650, 390, 650, 50);
+
+        jTextField5.addActionListener(this::jTextField5ActionPerformed);
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(650, 510, 650, 50);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,9 +311,6 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -336,5 +336,8 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

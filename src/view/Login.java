@@ -44,8 +44,6 @@ public class Login extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -74,6 +72,8 @@ public class Login extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1536, 864));
@@ -156,7 +156,7 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Username / Email");
         jLabel3.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(660, 360, 330, 40);
+        jLabel3.setBounds(660, 390, 330, 40);
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(53, 100, 166));
@@ -171,21 +171,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__2_-removebg-preview_1.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(700, 540, 60, 60);
-
-        jLabel13.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(36, 0, 0));
-        jLabel13.setText("                       Password");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(660, 540, 650, 60);
-
-        jLabel15.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(36, 0, 0));
-        jLabel15.setText("                       Enter your Username / email");
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jLabel15);
-        jLabel15.setBounds(660, 420, 650, 60);
+        jLabel2.setBounds(1260, 560, 50, 40);
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel12.setText("Login");
@@ -197,7 +183,7 @@ public class Login extends javax.swing.JFrame {
         jLabel17.setText("                       Password");
         jLabel17.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel17);
-        jLabel17.setBounds(510, 500, 330, 40);
+        jLabel17.setBounds(520, 510, 330, 40);
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(11, 75, 159));
@@ -360,7 +346,15 @@ public class Login extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(680, 420, 60, 60);
+        jLabel9.setBounds(1260, 440, 40, 40);
+
+        jTextField1.addActionListener(this::jTextField1ActionPerformed);
+        getContentPane().add(jTextField1);
+        jTextField1.setBounds(660, 560, 650, 50);
+
+        jTextField3.addActionListener(this::jTextField3ActionPerformed);
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(660, 440, 650, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -376,6 +370,14 @@ public class Login extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,8 +412,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -449,5 +449,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
