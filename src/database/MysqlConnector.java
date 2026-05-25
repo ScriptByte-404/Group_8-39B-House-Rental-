@@ -10,12 +10,12 @@ public class MysqlConnector implements db {
     @Override
     public Connection openConnection(){
     try {
-        String username = "frahia";
-        String password= "2007";
-        String database = "monday";
+        String username = "root";
+        String password= "cscorner";
+        String database = "house_rental_system";
     Connection connection;
     connection = DriverManager .getConnection(
-            "jdbc:mysql://127.0.0.1:3306/" + database ,username, password 
+           "jdbc:mysql://localhost:3306/" + database ,username, password 
           );
              if(connection == null){
 

@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.LoginController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Safal
@@ -72,8 +75,8 @@ public class Login extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1536, 864));
@@ -348,19 +351,49 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel9);
         jLabel9.setBounds(1260, 440, 40, 40);
 
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(660, 560, 650, 50);
+        txtPassword.addActionListener(this::txtPasswordActionPerformed);
+        getContentPane().add(txtPassword);
+        txtPassword.setBounds(660, 560, 650, 50);
 
-        jTextField3.addActionListener(this::jTextField3ActionPerformed);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(660, 440, 650, 50);
+        txtUsername.addActionListener(this::txtUsernameActionPerformed);
+        getContentPane().add(txtUsername);
+        txtUsername.setBounds(660, 440, 650, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
+
+    String usernameOrEmail = txtUsername.getText().trim();
+    String password = txtPassword.getText().trim();
+
+    if (usernameOrEmail.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill all fields!");
+        return;
+    }
+
+    LoginController controller = new LoginController();
+
+    boolean success = controller.loginUser(usernameOrEmail, password);
+
+    if (success) {
+
+        JOptionPane.showMessageDialog(this, "Login Successful!");
+
+        // OPEN DASHBOARD
+        DashBoard dash = new DashBoard();
+        dash.setVisible(true);
+
+        // CLOSE LOGIN WINDOW
+        this.dispose();
+
+    } else {
+
+        JOptionPane.showMessageDialog(this, "Invalid username or password!");
+    }
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -371,13 +404,13 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,7 +482,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
