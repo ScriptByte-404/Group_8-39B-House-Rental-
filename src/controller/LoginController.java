@@ -1,7 +1,6 @@
 package controller;
 
 import dao.UserDAO;
-import model.logindata;
 
 public class LoginController {
 
@@ -9,12 +8,6 @@ public class LoginController {
 
     public boolean loginUser(String usernameOrEmail, String password) {
 
-        logindata user = new logindata(
-            usernameOrEmail,  // username
-            usernameOrEmail,  // email (you are allowing either login)
-            password
-        );
-
-        return dao.checkUser(user);
+        return dao.checkUser(usernameOrEmail, password);
     }
 }
