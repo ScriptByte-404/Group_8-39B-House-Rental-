@@ -3,6 +3,7 @@ package view;
 import database.MysqlConnector;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.geom.*;
 import java.sql.*;
 import javax.swing.*;
 import javax.swing.border.*;
@@ -12,7 +13,7 @@ public class SearchHouses extends javax.swing.JFrame {
     private String loggedInUsername = "User";
     private Connection conn;
 
-    // ── Colors ────────────────────────────────────────────────────────────────
+    // ── Exact Figma colors ────────────────────────────────────────────────────
     private static final Color BG          = new Color(245, 245, 245);
     private static final Color WHITE       = Color.WHITE;
     private static final Color BLUE_NAV    = new Color(13,  71, 161);
@@ -47,13 +48,14 @@ public class SearchHouses extends javax.swing.JFrame {
     private JLabel    resultsLabel;
     private JComboBox<String> locationBox, typeBox, minPriceBox, maxPriceBox;
 
-    public SearchHouses()                { initComponents(); }
-    public SearchHouses(String username) { this.loggedInUsername = username; initComponents(); connectDB(); }
+    public SearchHouses()                    { initComponents(); }
+    public SearchHouses(String username)     { this.loggedInUsername = username; initComponents(); connectDB(); }
 
     private void connectDB() {
         try { conn = MysqlConnector.getConnection(); } catch (Exception e) { conn = null; }
     }
 
+    // ══════════════════════════════════════════════════════════════════════════
     private void initComponents() {
         setTitle("GharSathi - Search Houses");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,6 +78,7 @@ public class SearchHouses extends javax.swing.JFrame {
         buildTopBar(root, W);
         buildNavBar(root, W);
         buildFilterPanel(root, W);
+        buildResultsArea(root, W);
         root.revalidate();
         root.repaint();
     }
@@ -361,10 +364,184 @@ public class SearchHouses extends javax.swing.JFrame {
         return box;
     }
 
-    // ── Stubs needed so Commit 2 compiles ─────────────────────────────────────
-    private void applyFilters() {}
-    private void filterAndShow(String kw, String loc, String type, int min, int max) {}
-    private void showCards(Object[][] houses) {}
+    // ── RESULTS AREA ──────────────────────────────────────────────────────────
+    private void buildResultsArea(JPanel root, int W) {
+        resultsLabel = new JLabel("Found " + ALL_HOUSES.length + " Properties");
+        resultsLabel.setFont(new Font("Segoe UI", Font.BOLD, 15));
+        resultsLabel.setForeground(TEXT_DARK);
+        resultsLabel.setBounds(20, 250, 400, 26);
+        root.add(resultsLabel);
+
+        cardsPanel = new JPanel(new WrapLayout(FlowLayout.LEFT, 14, 14));
+        cardsPanel.setBackground(BG);
+
+        JScrollPane scroll = new JScrollPane(cardsPanel);
+        scroll.setBounds(20, 282, W - 40, getHeight() - 318);
+        scroll.setBorder(BorderFactory.createEmptyBorder());
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scroll.getVerticalScrollBar().setUnitIncrement(16);
+        root.add(scroll);
+
+        showCards(ALL_HOUSES);
+    }
+
+    // ── FILTER LOGIC ──────────────────────────────────────────────────────────
+    private void applyFilters() {
+        String loc  = (String) locationBox.getSelectedItem();
+        String type = (String) typeBox.getSelectedItem();
+        String minS = (String) minPriceBox.getSelectedItem();
+        String maxS = (String) maxPriceBox.getSelectedItem();
+        int minV = 0, maxV = Integer.MAX_VALUE;
+        try { if (!minS.equals("Min Price")) minV = Integer.parseInt(minS.replace("Rs ","").replace(",","")); } catch (Exception ignored) {}
+        try { if (!maxS.equals("Max Price")) maxV = Integer.parseInt(maxS.replace("Rs ","").replace(",","")); } catch (Exception ignored) {}
+        filterAndShow("",
+            loc.equals("Select Location") ? "All" : loc,
+            type.equals("Select Type")    ? "All" : type,
+            minV, maxV);
+    }
+
+    private void filterAndShow(String kw, String loc, String type, int min, int max) {
+        java.util.List<Object[]> res = new java.util.ArrayList<>();
+        for (Object[] h : ALL_HOUSES) {
+            String n=(String)h[0], l=(String)h[1], t=(String)h[2]; int p=(int)h[3];
+            if ((kw.isEmpty() || n.toLowerCase().contains(kw.toLowerCase()) || l.toLowerCase().contains(kw.toLowerCase()))
+                && (loc.equals("All")  || l.equalsIgnoreCase(loc))
+                && (type.equals("All") || t.equalsIgnoreCase(type))
+                && p >= min && p <= max) res.add(h);
+        }
+        Object[][] arr = res.toArray(new Object[0][]);
+        showCards(arr);
+        resultsLabel.setText("Found " + arr.length + " Properties");
+    }
+
+    // ── CARDS ─────────────────────────────────────────────────────────────────
+    private void showCards(Object[][] houses) {
+        cardsPanel.removeAll();
+        if (houses.length == 0) {
+            JLabel empty = new JLabel("No properties found. Try different filters.");
+            empty.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+            empty.setForeground(TEXT_GREY);
+            cardsPanel.add(empty);
+        } else {
+            for (Object[] h : houses)
+                cardsPanel.add(buildCard((String)h[0],(String)h[1],(String)h[2],(int)h[3]));
+        }
+        cardsPanel.revalidate();
+        cardsPanel.repaint();
+    }
+
+    private JPanel buildCard(String name, String location, String type, int price) {
+        JPanel card = new JPanel(null) {
+            private boolean hovered = false;
+            {
+                addMouseListener(new MouseAdapter() {
+                    public void mouseEntered(MouseEvent e) { hovered = true; repaint(); }
+                    public void mouseExited (MouseEvent e) { hovered = false; repaint(); }
+                    public void mouseClicked(MouseEvent e) {
+                        int c = JOptionPane.showConfirmDialog(SearchHouses.this,
+                            name + "\nLocation: " + location + "\nType: " + type
+                            + "\nPrice: Rs " + String.format("%,d", price) + " / month"
+                            + "\n\nClick OK to request booking.",
+                            "Property Details", JOptionPane.OK_CANCEL_OPTION);
+                        if (c == JOptionPane.OK_OPTION)
+                            JOptionPane.showMessageDialog(SearchHouses.this, "Booking request sent for " + name + "!");
+                    }
+                });
+            }
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(hovered ? CARD_HOVER : WHITE);
+                g2.fillRoundRect(0, 0, getWidth()-1, getHeight()-1, 10, 10);
+                g2.setColor(hovered ? BLUE_NAV : BORDER_CLR);
+                g2.setStroke(new BasicStroke(hovered ? 1.5f : 1f));
+                g2.drawRoundRect(0, 0, getWidth()-1, getHeight()-1, 10, 10);
+            }
+        };
+        card.setOpaque(false);
+        card.setPreferredSize(new Dimension(220, 200));
+        card.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        JPanel imgArea = new JPanel(null) {
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(new Color(230, 235, 240));
+                g2.fillRect(0, 0, getWidth(), getHeight());
+                int cx = getWidth()/2 - 22, cy = getHeight()/2 - 22, iw = 44, ih = 44;
+                g2.setColor(TEXT_DARK);
+                g2.setStroke(new BasicStroke(2f));
+                g2.drawRoundRect(cx, cy, iw, ih, 4, 4);
+                g2.fillOval(cx+7, cy+9, 10, 10);
+                int[] mpx = {cx+4, cx+20, cx+iw-4};
+                int[] mpy = {cy+ih-4, cy+ih/2+4, cy+ih-4};
+                g2.fillPolygon(mpx, mpy, 3);
+                int[] mpx2 = {cx+16, cx+28, cx+iw};
+                int[] mpy2 = {cy+ih-4, cy+ih/2-2, cy+ih-4};
+                g2.fillPolygon(mpx2, mpy2, 3);
+            }
+        };
+        imgArea.setBounds(0, 0, 220, 110);
+        card.add(imgArea);
+
+        JLabel nameLbl = new JLabel(name);
+        nameLbl.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        nameLbl.setForeground(TEXT_DARK);
+        nameLbl.setBounds(10, 116, 200, 20);
+        card.add(nameLbl);
+
+        JPanel locRow = new JPanel(null) {
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2.setColor(TEXT_GREY);
+                g2.fillOval(1, 1, 9, 9);
+                g2.fillPolygon(new int[]{1,10,5}, new int[]{7,7,16}, 3);
+                g2.setColor(WHITE); g2.fillOval(3, 3, 5, 5);
+            }
+        };
+        locRow.setOpaque(false);
+        locRow.setBounds(10, 138, 14, 17);
+        card.add(locRow);
+
+        JLabel locLbl = new JLabel(location);
+        locLbl.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        locLbl.setForeground(TEXT_GREY);
+        locLbl.setBounds(26, 138, 180, 17);
+        card.add(locLbl);
+
+        JLabel priceLbl = new JLabel(String.format("Rs %,d per month", price));
+        priceLbl.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        priceLbl.setForeground(PRICE_CLR);
+        priceLbl.setBounds(10, 160, 200, 18);
+        card.add(priceLbl);
+
+        return card;
+    }
+
+    // ── WRAP LAYOUT ───────────────────────────────────────────────────────────
+    static class WrapLayout extends FlowLayout {
+        WrapLayout(int align, int hgap, int vgap) { super(align, hgap, vgap); }
+        public Dimension preferredLayoutSize(Container t) { return layout(t, true);  }
+        public Dimension minimumLayoutSize(Container t)   { return layout(t, false); }
+        private Dimension layout(Container target, boolean pref) {
+            synchronized (target.getTreeLock()) {
+                int tw = target.getSize().width; if (tw==0) tw = Integer.MAX_VALUE;
+                Insets ins = target.getInsets();
+                int maxW = tw - ins.left - ins.right - getHgap()*2;
+                Dimension dim = new Dimension(0,0); int rw=0, rh=0;
+                for (int i=0; i<target.getComponentCount(); i++) {
+                    Component m = target.getComponent(i); if (!m.isVisible()) continue;
+                    Dimension d = pref ? m.getPreferredSize() : m.getMinimumSize();
+                    if (rw+d.width > maxW) { dim.width=Math.max(dim.width,rw); dim.height+=rh+getVgap(); rw=0; rh=0; }
+                    rw+=d.width+getHgap(); rh=Math.max(rh,d.height);
+                }
+                dim.width=Math.max(dim.width,rw);
+                dim.height+=rh+ins.top+ins.bottom+getVgap()*2;
+                return dim;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         try { UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); } catch (Exception ignored) {}
