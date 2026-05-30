@@ -3,24 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import controller.UserController;
-import java.awt.HeadlessException;
+
+import controller.EmailUtility;
+import dao.UserDAO;
 import javax.swing.JOptionPane;
-import model.logindata;
-import view.Login;
 
 /**
  *
  * @author Safal
  */
-public class Registration extends javax.swing.JFrame {
+public class Forget_Password extends javax.swing.JFrame {
 
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Registration.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Forget_Password.class.getName());
 
     /**
      * Creates new form Login
      */
-    public Registration() {
+    public Forget_Password() {
         initComponents();
     }
 
@@ -40,21 +39,16 @@ public class Registration extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnSignup = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -63,10 +57,11 @@ public class Registration extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        TxtUsername = new javax.swing.JTextField();
-        TxtEmailORphoneNo = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JPasswordField();
-        btnNext = new javax.swing.JButton();
+        txtEmail = new javax.swing.JTextField();
+        btnBackToLogin = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1536, 864));
@@ -77,137 +72,110 @@ public class Registration extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel22.setText("Register to rent your  ");
+        jLabel22.setText("We'll help you ");
         jLabel22.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(60, 690, 680, 40);
+        jLabel22.setBounds(60, 580, 680, 40);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Find your perfect home");
         jLabel5.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(90, 280, 360, 40);
+        jLabel5.setBounds(80, 250, 360, 40);
 
         jLabel7.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
         jLabel7.setText("House Rental ");
         jLabel7.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(100, 160, 420, 60);
+        jLabel7.setBounds(90, 140, 420, 60);
 
         jLabel11.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
         jLabel11.setText("           System");
         jLabel11.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(-150, 200, 880, 80);
+        jLabel11.setBounds(-140, 170, 880, 80);
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel23.setText("using GharSathi .    ");
+        jLabel23.setText("your account.    ");
         jLabel23.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel23);
-        jLabel23.setBounds(60, 740, 180, 20);
+        jLabel23.setBounds(60, 630, 180, 20);
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel24.setText("next perfect place to live ");
+        jLabel24.setText("get back to ");
         jLabel24.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel24);
-        jLabel24.setBounds(60, 720, 680, 20);
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(53, 100, 166));
-        jLabel25.setText("Need Help");
-        jLabel25.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel25);
-        jLabel25.setBounds(130, 790, 680, 20);
+        jLabel24.setBounds(60, 610, 680, 20);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel26.setText("issues ?");
+        jLabel26.setText("is our priority");
         jLabel26.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel26);
-        jLabel26.setBounds(60, 790, 680, 20);
+        jLabel26.setBounds(190, 730, 680, 30);
 
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(53, 100, 166));
-        jLabel30.setText("Register,");
+        jLabel30.setText("Welcome Back,");
         jLabel30.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel30);
-        jLabel30.setBounds(60, 640, 350, 30);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 100, 540, 720);
+        jLabel30.setBounds(50, 540, 350, 30);
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
         jLabel31.setText("jLabel31");
         jPanel1.add(jLabel31);
         jLabel31.setBounds(180, 40, 120, 120);
 
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel33.setText("Your security ");
+        jLabel33.setPreferredSize(new java.awt.Dimension(635, 244));
+        jPanel1.add(jLabel33);
+        jLabel33.setBounds(190, 720, 680, 20);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 60, 540, 720);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 544, 864);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("Email/Phonenumber");
+        jLabel3.setText("OR");
         jLabel3.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(650, 460, 220, 40);
+        jLabel3.setBounds(960, 670, 40, 30);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel4.setText("Create account  using username ,email  ");
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Enter your registerd email ");
         jLabel4.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(650, 230, 880, 50);
+        jLabel4.setBounds(650, 150, 880, 50);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel6.setText("Signup");
+        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 1, 48)); // NOI18N
+        jLabel6.setText("Let's reset your password");
         jLabel6.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(650, 160, 880, 60);
+        jLabel6.setBounds(650, 80, 880, 60);
 
         btnSignup.setBackground(new java.awt.Color(15, 75, 155));
         btnSignup.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSignup.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignup.setText("Signup");
+        btnSignup.setText("Send OTP");
         btnSignup.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSignup.addActionListener(this::btnSignupActionPerformed);
         getContentPane().add(btnSignup);
-        btnSignup.setBounds(660, 710, 160, 50);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(1230, 390, 40, 40);
+        btnSignup.setBounds(690, 610, 580, 50);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__1_-removebg-preview_1.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(1230, 510, 60, 50);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__2_-removebg-preview_1.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1240, 610, 50, 50);
-
-        jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        jLabel12.setText("WELCOME TO");
-        jLabel12.setPreferredSize(new java.awt.Dimension(635, 244));
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(650, 50, 880, 40);
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel16.setText("                       Username");
-        jLabel16.setPreferredSize(new java.awt.Dimension(635, 244));
-        getContentPane().add(jLabel16);
-        jLabel16.setBounds(500, 340, 330, 40);
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel17.setText("                       Password");
-        jLabel17.setPreferredSize(new java.awt.Dimension(635, 244));
-        getContentPane().add(jLabel17);
-        jLabel17.setBounds(500, 570, 330, 40);
+        jLabel9.setBounds(1240, 540, 60, 50);
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(11, 75, 159));
-        jLabel10.setText("House Rental System");
+        jLabel10.setText("Forget Password");
         jLabel10.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(650, 90, 880, 40);
+        jLabel10.setBounds(650, 30, 880, 40);
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(11, 75, 159));
@@ -230,11 +198,11 @@ public class Registration extends javax.swing.JFrame {
         getContentPane().add(jLabel20);
         jLabel20.setBounds(40, 50, 880, 40);
 
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel21.setText("and phone number ");
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel21.setText("Time_Password (OTP)");
         jLabel21.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(650, 270, 880, 40);
+        jLabel21.setBounds(650, 210, 880, 30);
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel27.setText("using GharSathi .     ");
@@ -254,87 +222,91 @@ public class Registration extends javax.swing.JFrame {
         getContentPane().add(jLabel29);
         jLabel29.setBounds(60, 740, 680, 20);
 
-        TxtUsername.addActionListener(this::TxtUsernameActionPerformed);
-        getContentPane().add(TxtUsername);
-        TxtUsername.setBounds(650, 390, 650, 50);
+        txtEmail.addActionListener(this::txtEmailActionPerformed);
+        getContentPane().add(txtEmail);
+        txtEmail.setBounds(650, 540, 650, 50);
 
-        TxtEmailORphoneNo.addActionListener(this::TxtEmailORphoneNoActionPerformed);
-        getContentPane().add(TxtEmailORphoneNo);
-        TxtEmailORphoneNo.setBounds(650, 510, 650, 50);
+        btnBackToLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnBackToLogin.setForeground(new java.awt.Color(51, 51, 51));
+        btnBackToLogin.setText("Back to Login");
+        btnBackToLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnBackToLogin.addActionListener(this::btnBackToLoginActionPerformed);
+        getContentPane().add(btnBackToLogin);
+        btnBackToLogin.setBounds(700, 710, 570, 50);
 
-        txtPassword.addActionListener(this::txtPasswordActionPerformed);
-        getContentPane().add(txtPassword);
-        txtPassword.setBounds(650, 610, 650, 50);
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setText("Enter your email");
+        jLabel8.setPreferredSize(new java.awt.Dimension(635, 244));
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(650, 490, 220, 40);
 
-        btnNext.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnNext.setForeground(new java.awt.Color(51, 51, 51));
-        btnNext.setText("Continue");
-        btnNext.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnNext.addActionListener(this::btnNextActionPerformed);
-        getContentPane().add(btnNext);
-        btnNext.setBounds(1120, 710, 160, 50);
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel32.setText("and we'll send you  a One_");
+        jLabel32.setPreferredSize(new java.awt.Dimension(635, 244));
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(650, 180, 880, 40);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ChatGPT ImagePM.png"))); // NOI18N
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(770, 220, 440, 360);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
 
-    String username = TxtUsername.getText().trim();
-    String email = TxtEmailORphoneNo.getText().trim();
-    String password = new String(txtPassword.getPassword()).trim();
 
-    // basic validation
-    if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill all fields!");
+    String email = txtEmail.getText().trim();
+
+    if(email.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Enter Email");
         return;
     }
 
-    try {
-        logindata user = new logindata(username, email, password);
+    UserDAO dao = new UserDAO();
 
-        UserController controller = new UserController();
-
-        boolean success = controller.registerUser(user);
-
-        if (success) {
-            JOptionPane.showMessageDialog(this, "User Registered Successfully!");
-            
-            // clear fields after success
-            TxtUsername.setText("");
-            TxtEmailORphoneNo.setText("");
-            txtPassword.setText("");
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Registration Failed!");
-        }
-
-    } catch (HeadlessException e) {
-        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    if(!dao.emailExists(email)) {
+        JOptionPane.showMessageDialog(this, "Email not found");
+        return;
     }
 
+    // ← Run email sending in background so UI doesn't freeze
+    new Thread(() -> {
+
+        String otp = String.valueOf((int)(Math.random() * 900000) + 100000);
+        boolean otpSaved = dao.saveOTP(email, otp);
+
+        if(otpSaved) {
+            boolean emailSent = EmailUtility.sendOTP(email, otp);
+
+            javax.swing.SwingUtilities.invokeLater(() -> {
+                if(emailSent) {
+                    JOptionPane.showMessageDialog(this, "OTP Sent Successfully");
+                    VerifyOTP verify = new VerifyOTP(email);
+                    verify.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Failed to send email");
+                }
+            });
+        }
+
+    }).start();
 
     }//GEN-LAST:event_btnSignupActionPerformed
 
-    private void TxtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUsernameActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TxtUsernameActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void TxtEmailORphoneNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtEmailORphoneNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TxtEmailORphoneNoActionPerformed
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
-
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+    private void btnBackToLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackToLoginActionPerformed
 
 
     Login login = new Login();
     login.setVisible(true);
 
     this.dispose();     // TODO add your handling code here:
-    }//GEN-LAST:event_btnNextActionPerformed
+    }//GEN-LAST:event_btnBackToLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,30 +330,24 @@ public class Registration extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Registration().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Forget_Password().setVisible(true));
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField TxtEmailORphoneNo;
-    private javax.swing.JTextField TxtUsername;
-    private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnBackToLogin;
     private javax.swing.JButton btnSignup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -389,6 +355,8 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -396,6 +364,6 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
 }

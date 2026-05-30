@@ -5,15 +5,24 @@
         <group>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/DashBoard.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Login.java</file>
-            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Registration.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/model/logindata.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/database/MysqlConnector.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/images/NewClass.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/database/db.java</file>
-            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/dao/UserDAO.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/New_class.java</file>
-            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/gharsathi/GharSathi.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/NewClass.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Registration.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/UserController.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/dao/UserDAO.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/VerifyOTP.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Forget_Password.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Reset_Password.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/EmailUtility.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/OTPController.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/controller/PasswordResetController.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Signup.java</file>
         </group>
     </open-files>
 </project-private>
