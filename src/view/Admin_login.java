@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author Safal
  */
-public class Login extends javax.swing.JFrame {
+public class Admin_login extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Admin_login.class.getName());
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public Admin_login() {
         initComponents();
     }
 
@@ -145,7 +145,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 100, 540, 720);
+        jLabel1.setBounds(10, 60, 540, 720);
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
         jLabel31.setText("jLabel31");
@@ -256,18 +256,18 @@ public class Login extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(15, 75, 155));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("User");
+        jButton4.setText("Admin");
         jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton4.addActionListener(this::jButton4ActionPerformed);
         getContentPane().add(jButton4);
-        jButton4.setBounds(660, 200, 210, 60);
+        jButton4.setBounds(880, 200, 210, 60);
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton5.setText("Admin");
+        jButton5.setText("User");
         jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton5.addActionListener(this::jButton5ActionPerformed);
         getContentPane().add(jButton5);
-        jButton5.setBounds(880, 200, 210, 60);
+        jButton5.setBounds(660, 200, 210, 60);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
         jLabel6.setText("jLabel4");
@@ -365,24 +365,24 @@ public class Login extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
 
-    String usernameOrEmail = txtUsername.getText().trim();
+    String username = txtUsername.getText().trim();
     String password = txtPassword.getText().trim();
 
-    if (usernameOrEmail.isEmpty() || password.isEmpty()) {
+    if (username.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Please fill all fields!");
         return;
     }
 
     LoginController controller = new LoginController();
 
-    boolean success = controller.loginUser(usernameOrEmail, password);
+    boolean success = controller.loginUser(username, password);
 
     if (success) {
 
         JOptionPane.showMessageDialog(this, "Login Successful!");
 
         // OPEN DASHBOARD
-        DashBoard dash = new DashBoard();
+        profile dash = new profile();
         dash.setVisible(true);
 
         // CLOSE LOGIN WINDOW
@@ -434,7 +434,7 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Admin_login().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

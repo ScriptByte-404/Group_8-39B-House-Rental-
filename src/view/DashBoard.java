@@ -660,7 +660,7 @@ public class DashBoard extends javax.swing.JFrame {
         Iconlogo_Button.setBorder(null);
         Iconlogo_Button.addActionListener(this::Iconlogo_ButtonActionPerformed);
         getContentPane().add(Iconlogo_Button);
-        Iconlogo_Button.setBounds(1490, 0, 50, 30);
+        Iconlogo_Button.setBounds(1240, 0, 50, 30);
 
         Username_Text.setBackground(new java.awt.Color(243, 243, 243));
         Username_Text.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
