@@ -58,9 +58,9 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        login = new javax.swing.JButton();
+        user = new javax.swing.JButton();
+        admin = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
@@ -244,30 +244,30 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel37);
         jLabel37.setBounds(890, 210, 50, 40);
 
-        jButton2.setBackground(new java.awt.Color(15, 75, 155));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Login");
-        jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        getContentPane().add(jButton2);
-        jButton2.setBounds(1060, 640, 160, 50);
+        login.setBackground(new java.awt.Color(15, 75, 155));
+        login.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("Login");
+        login.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        login.addActionListener(this::loginActionPerformed);
+        getContentPane().add(login);
+        login.setBounds(1060, 640, 160, 50);
 
-        jButton4.setBackground(new java.awt.Color(15, 75, 155));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("User");
-        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton4.addActionListener(this::jButton4ActionPerformed);
-        getContentPane().add(jButton4);
-        jButton4.setBounds(660, 200, 210, 60);
+        user.setBackground(new java.awt.Color(15, 75, 155));
+        user.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        user.setForeground(new java.awt.Color(255, 255, 255));
+        user.setText("User");
+        user.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        user.addActionListener(this::userActionPerformed);
+        getContentPane().add(user);
+        user.setBounds(660, 200, 210, 60);
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jButton5.setText("Admin");
-        jButton5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton5.addActionListener(this::jButton5ActionPerformed);
-        getContentPane().add(jButton5);
-        jButton5.setBounds(880, 200, 210, 60);
+        admin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        admin.setText("Admin");
+        admin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        admin.addActionListener(this::adminActionPerformed);
+        getContentPane().add(admin);
+        admin.setBounds(880, 200, 210, 60);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
         jLabel6.setText("jLabel4");
@@ -362,7 +362,7 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
 
 
     String usernameOrEmail = txtUsername.getText().trim();
@@ -394,15 +394,22 @@ public class Login extends javax.swing.JFrame {
     }
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_loginActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_userActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
+        
+        // OPEN DASHBOARD
+        var dash = new Admin_login();
+        dash.setVisible(true);
+
+        // CLOSE LOGIN WINDOW
+        this.dispose();
+
+     }//GEN-LAST:event_adminActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
@@ -438,9 +445,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton admin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -482,7 +487,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton login;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtUsername;
+    private javax.swing.JButton user;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,7 +5,6 @@
 package dao;
 import Database.MysqlConnector;
 import java.sql.*;
-import model.Admindata;
 import model.logindata;
 
 /**
