@@ -8,19 +8,16 @@ package view;
  *
  * @author Safal
  */
-public class DashBoard extends javax.swing.JFrame {
+public class AdminDashboard extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(DashBoard.class.getName());
-private javax.swing.JPopupMenu notificationPopup;
-private int unreadCount = 3;
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminDashboard.class.getName());
+
     /**
      * Creates new form Login
      */
-  public DashBoard() {
+public AdminDashboard() {
     initComponents();
-    initNotificationPopup();
 }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,45 +27,14 @@ private int unreadCount = 3;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        Explore_Button = new javax.swing.JButton();
-        Info_text = new javax.swing.JTextField();
-        Info_text2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
-        SearchBar_Button = new javax.swing.JButton();
         GharSathi_Text = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         SearchHouse_Button = new javax.swing.JButton();
         Bookings_Button = new javax.swing.JButton();
-        SavedHouse_Button = new javax.swing.JButton();
+        Post_a_Notice = new javax.swing.JButton();
         Profile_Button = new javax.swing.JButton();
         Dashboard_Button = new javax.swing.JButton();
-        Conforimed_Panel = new javax.swing.JPanel();
-        Conforimned_Text = new javax.swing.JTextField();
-        ConforimnedText = new javax.swing.JTextField();
-        CancelledIcon2 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        TotalHouse_Panel = new javax.swing.JPanel();
-        TotalHouseNo_Text = new javax.swing.JTextField();
-        TotalHouse_Text = new javax.swing.JTextField();
-        CancelledIcon3 = new javax.swing.JLabel();
-        MyBookings_Panel = new javax.swing.JPanel();
-        MyBookingsNo_Text = new javax.swing.JTextField();
-        MyBookings_Text = new javax.swing.JTextField();
-        CancelledIcon1 = new javax.swing.JLabel();
-        Cancelled_Panel = new javax.swing.JPanel();
-        CancelledNo_text = new javax.swing.JTextField();
-        Cancelled_text = new javax.swing.JTextField();
-        CancelledIcon = new javax.swing.JLabel();
         House1Price_Text = new javax.swing.JTextField();
         House1Name_Text = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -122,103 +88,11 @@ private int unreadCount = 3;
         setSize(new java.awt.Dimension(1536, 864));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(250, 241, 224));
-        jPanel1.setPreferredSize(new java.awt.Dimension(544, 864));
-        jPanel1.setLayout(null);
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel22.setText("Register to rent your  ");
-        jLabel22.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel22);
-        jLabel22.setBounds(60, 690, 680, 40);
-
-        jLabel7.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
-        jLabel7.setText("House Rental ");
-        jLabel7.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(90, 450, 420, 60);
-
-        jLabel11.setFont(new java.awt.Font("Courier New", 1, 48)); // NOI18N
-        jLabel11.setText("           System");
-        jLabel11.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel11);
-        jLabel11.setBounds(-200, 410, 880, 80);
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel23.setText("using GharSathi .    ");
-        jLabel23.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel23);
-        jLabel23.setBounds(60, 740, 180, 20);
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel24.setText("next perfect place to live ");
-        jLabel24.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel24);
-        jLabel24.setBounds(60, 720, 680, 20);
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(53, 100, 166));
-        jLabel25.setText("Sign up");
-        jLabel25.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel25);
-        jLabel25.setBounds(150, 790, 110, 20);
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel26.setText("New here? ");
-        jLabel26.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel26);
-        jLabel26.setBounds(60, 790, 680, 20);
-
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(53, 100, 166));
-        jLabel44.setText("Join Us,");
-        jLabel44.setPreferredSize(new java.awt.Dimension(635, 244));
-        jPanel1.add(jLabel44);
-        jLabel44.setBounds(50, 640, 350, 30);
-
-        Explore_Button.setBackground(new java.awt.Color(15, 75, 155));
-        Explore_Button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Explore_Button.setForeground(new java.awt.Color(255, 255, 255));
-        Explore_Button.setText("Explore Houses");
-        Explore_Button.addActionListener(this::Explore_ButtonActionPerformed);
-        jPanel1.add(Explore_Button);
-        Explore_Button.setBounds(90, 110, 190, 50);
-
-        Info_text.setBackground(new java.awt.Color(252, 238, 222));
-        Info_text.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        Info_text.setText("Welcome back , User!");
-        Info_text.setBorder(null);
-        Info_text.addActionListener(this::Info_textActionPerformed);
-        jPanel1.add(Info_text);
-        Info_text.setBounds(30, 10, 370, 40);
-
-        Info_text2.setBackground(new java.awt.Color(252, 238, 222));
-        Info_text2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Info_text2.setText("Find and book your ideal home easily.");
-        Info_text2.setBorder(null);
-        Info_text2.addActionListener(this::Info_text2ActionPerformed);
-        jPanel1.add(Info_text2);
-        Info_text2.setBounds(70, 50, 350, 30);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/{588B1E74-C79C-48C4-898A-8BBB8F90127D} 1 (2).png"))); // NOI18N
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(630, 0, 770, 200);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(60, 200, 1400, 200);
-
         jLabel36.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         jLabel36.setText("House Rental ");
         jLabel36.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel36);
         jLabel36.setBounds(110, 10, 250, 40);
-
-        SearchBar_Button.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        SearchBar_Button.setText("Search by Location,house name.......");
-        SearchBar_Button.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        SearchBar_Button.addActionListener(this::SearchBar_ButtonActionPerformed);
-        getContentPane().add(SearchBar_Button);
-        SearchBar_Button.setBounds(430, 50, 740, 40);
 
         GharSathi_Text.setBackground(new java.awt.Color(243, 243, 243));
         GharSathi_Text.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -245,11 +119,11 @@ private int unreadCount = 3;
         getContentPane().add(Bookings_Button);
         Bookings_Button.setBounds(680, 130, 260, 50);
 
-        SavedHouse_Button.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        SavedHouse_Button.setText("Saved Houses");
-        SavedHouse_Button.addActionListener(this::SavedHouse_ButtonActionPerformed);
-        getContentPane().add(SavedHouse_Button);
-        SavedHouse_Button.setBounds(940, 130, 260, 50);
+        Post_a_Notice.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Post_a_Notice.setText("Post a Notice");
+        Post_a_Notice.addActionListener(this::Post_a_NoticeActionPerformed);
+        getContentPane().add(Post_a_Notice);
+        Post_a_Notice.setBounds(940, 130, 260, 50);
 
         Profile_Button.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Profile_Button.setText("Profile");
@@ -264,114 +138,6 @@ private int unreadCount = 3;
         Dashboard_Button.addActionListener(this::Dashboard_ButtonActionPerformed);
         getContentPane().add(Dashboard_Button);
         Dashboard_Button.setBounds(90, 130, 250, 50);
-
-        Conforimed_Panel.setBackground(new java.awt.Color(255, 255, 255));
-        Conforimed_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        Conforimed_Panel.setLayout(null);
-
-        Conforimned_Text.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        Conforimned_Text.setText("02");
-        Conforimned_Text.setBorder(null);
-        Conforimned_Text.addActionListener(this::Conforimned_TextActionPerformed);
-        Conforimed_Panel.add(Conforimned_Text);
-        Conforimned_Text.setBounds(150, 10, 60, 30);
-
-        ConforimnedText.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        ConforimnedText.setText("Confirmed");
-        ConforimnedText.setBorder(null);
-        ConforimnedText.addActionListener(this::ConforimnedTextActionPerformed);
-        Conforimed_Panel.add(ConforimnedText);
-        ConforimnedText.setBounds(120, 40, 140, 30);
-
-        CancelledIcon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__1_-removebg-preview (1).png"))); // NOI18N
-        CancelledIcon2.setText("jLabel1");
-        Conforimed_Panel.add(CancelledIcon2);
-        CancelledIcon2.setBounds(20, 10, 70, 70);
-
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Conforimed_Panel.add(jLabel2);
-        jLabel2.setBounds(-70, -130, 1030, 270);
-
-        getContentPane().add(Conforimed_Panel);
-        Conforimed_Panel.setBounds(800, 410, 300, 90);
-
-        TotalHouse_Panel.setBackground(new java.awt.Color(255, 255, 255));
-        TotalHouse_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        TotalHouse_Panel.setLayout(null);
-
-        TotalHouseNo_Text.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        TotalHouseNo_Text.setText("24");
-        TotalHouseNo_Text.setBorder(null);
-        TotalHouseNo_Text.addActionListener(this::TotalHouseNo_TextActionPerformed);
-        TotalHouse_Panel.add(TotalHouseNo_Text);
-        TotalHouseNo_Text.setBounds(130, 10, 50, 30);
-
-        TotalHouse_Text.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        TotalHouse_Text.setText("Total Houses");
-        TotalHouse_Text.setBorder(null);
-        TotalHouse_Text.addActionListener(this::TotalHouse_TextActionPerformed);
-        TotalHouse_Panel.add(TotalHouse_Text);
-        TotalHouse_Text.setBounds(100, 40, 160, 30);
-
-        CancelledIcon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images__1_-removebg-preview (2)_1.png"))); // NOI18N
-        CancelledIcon3.setText("jLabel1");
-        TotalHouse_Panel.add(CancelledIcon3);
-        CancelledIcon3.setBounds(20, 10, 70, 70);
-
-        getContentPane().add(TotalHouse_Panel);
-        TotalHouse_Panel.setBounds(40, 410, 290, 90);
-
-        MyBookings_Panel.setBackground(new java.awt.Color(255, 255, 255));
-        MyBookings_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        MyBookings_Panel.setLayout(null);
-
-        MyBookingsNo_Text.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        MyBookingsNo_Text.setText("08  ");
-        MyBookingsNo_Text.setBorder(null);
-        MyBookingsNo_Text.addActionListener(this::MyBookingsNo_TextActionPerformed);
-        MyBookings_Panel.add(MyBookingsNo_Text);
-        MyBookingsNo_Text.setBounds(140, 10, 40, 30);
-
-        MyBookings_Text.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        MyBookings_Text.setText("My Bookings");
-        MyBookings_Text.setBorder(null);
-        MyBookings_Text.addActionListener(this::MyBookings_TextActionPerformed);
-        MyBookings_Panel.add(MyBookings_Text);
-        MyBookings_Text.setBounds(90, 40, 170, 30);
-
-        CancelledIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__4_-removebg-preview.png"))); // NOI18N
-        CancelledIcon1.setText("jLabel1");
-        MyBookings_Panel.add(CancelledIcon1);
-        CancelledIcon1.setBounds(10, 10, 70, 70);
-
-        getContentPane().add(MyBookings_Panel);
-        MyBookings_Panel.setBounds(410, 410, 300, 90);
-
-        Cancelled_Panel.setBackground(new java.awt.Color(255, 255, 255));
-        Cancelled_Panel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        Cancelled_Panel.setLayout(null);
-
-        CancelledNo_text.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        CancelledNo_text.setText("06");
-        CancelledNo_text.setBorder(null);
-        CancelledNo_text.addActionListener(this::CancelledNo_textActionPerformed);
-        Cancelled_Panel.add(CancelledNo_text);
-        CancelledNo_text.setBounds(150, 10, 50, 30);
-
-        Cancelled_text.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        Cancelled_text.setText("Cancelled");
-        Cancelled_text.setBorder(null);
-        Cancelled_text.addActionListener(this::Cancelled_textActionPerformed);
-        Cancelled_Panel.add(Cancelled_text);
-        Cancelled_text.setBounds(120, 40, 120, 30);
-
-        CancelledIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__5_-removebg-preview.png"))); // NOI18N
-        CancelledIcon.setText("jLabel1");
-        Cancelled_Panel.add(CancelledIcon);
-        CancelledIcon.setBounds(10, 10, 70, 70);
-
-        getContentPane().add(Cancelled_Panel);
-        Cancelled_Panel.setBounds(1170, 410, 290, 90);
 
         House1Price_Text.setBackground(new java.awt.Color(243, 243, 243));
         House1Price_Text.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -691,10 +457,6 @@ private int unreadCount = 3;
         // TODO add your handling code here:
     }//GEN-LAST:event_GharSathi_TextActionPerformed
 
-    private void SearchBar_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBar_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SearchBar_ButtonActionPerformed
-
     private void SearchHouse_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchHouse_ButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchHouse_ButtonActionPerformed
@@ -703,9 +465,12 @@ private int unreadCount = 3;
         // TODO add your handling code here:
     }//GEN-LAST:event_Bookings_ButtonActionPerformed
 
-    private void SavedHouse_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavedHouse_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SavedHouse_ButtonActionPerformed
+    private void Post_a_NoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Post_a_NoticeActionPerformed
+                                           
+    new AdminNotice().setVisible(true);
+
+     // TODO add your handling code here:
+    }//GEN-LAST:event_Post_a_NoticeActionPerformed
 
     private void Profile_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Profile_ButtonActionPerformed
         // TODO add your handling code here:
@@ -714,50 +479,6 @@ private int unreadCount = 3;
     private void Dashboard_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Dashboard_ButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Dashboard_ButtonActionPerformed
-
-    private void Explore_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Explore_ButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Explore_ButtonActionPerformed
-
-    private void Info_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Info_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Info_textActionPerformed
-
-    private void Info_text2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Info_text2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Info_text2ActionPerformed
-
-    private void Conforimned_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Conforimned_TextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Conforimned_TextActionPerformed
-
-    private void ConforimnedTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConforimnedTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConforimnedTextActionPerformed
-
-    private void TotalHouseNo_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalHouseNo_TextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TotalHouseNo_TextActionPerformed
-
-    private void TotalHouse_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalHouse_TextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TotalHouse_TextActionPerformed
-
-    private void MyBookingsNo_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyBookingsNo_TextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MyBookingsNo_TextActionPerformed
-
-    private void MyBookings_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyBookings_TextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MyBookings_TextActionPerformed
-
-    private void CancelledNo_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelledNo_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CancelledNo_textActionPerformed
-
-    private void Cancelled_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancelled_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Cancelled_textActionPerformed
 
     private void RecommendedHouse2_BUtton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RecommendedHouse2_BUtton1ActionPerformed
         // TODO add your handling code here:
@@ -897,56 +618,37 @@ private int unreadCount = 3;
 
     private void Iconlogo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Iconlogo_ButtonActionPerformed
 
-                    
-    notificationPopup.removeAll();
-    initNotificationPopup(); // Rebuilds list dynamically with the newest admin entries
-    
-    // Shows the dropdown box right under your button (Replace Iconlogo_Button with your actual variable name if it differs)
-    notificationPopup.show(Iconlogo_Button, 
-        Iconlogo_Button.getWidth() - notificationPopup.getPreferredSize().width, 
-        Iconlogo_Button.getHeight());
-
+    // no notification popup for admin
+    // TODO add your handling code here:
     }//GEN-LAST:event_Iconlogo_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+ public static void main(String args[]) {
+ 
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new DashBoard().setVisible(true));
+    } catch (Exception ex) {
+        java.util.logging.Logger.getLogger(AdminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+
+    /* CRUCIAL: Opens both screens under the exact same process session */
+    java.awt.EventQueue.invokeLater(() -> {
+        new AdminDashboard().setVisible(true);
+        new DashBoard().setVisible(true);
+    });
+
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bookings_Button;
-    private javax.swing.JLabel CancelledIcon;
-    private javax.swing.JLabel CancelledIcon1;
-    private javax.swing.JLabel CancelledIcon2;
-    private javax.swing.JLabel CancelledIcon3;
-    private javax.swing.JTextField CancelledNo_text;
-    private javax.swing.JPanel Cancelled_Panel;
-    private javax.swing.JTextField Cancelled_text;
-    private javax.swing.JPanel Conforimed_Panel;
-    private javax.swing.JTextField ConforimnedText;
-    private javax.swing.JTextField Conforimned_Text;
     private javax.swing.JButton Dashboard_Button;
-    private javax.swing.JButton Explore_Button;
     private javax.swing.JTextField GharSathi_Text;
     private javax.swing.JTextField House1Name_Text;
     private javax.swing.JTextField House1Name_Text1;
@@ -967,12 +669,8 @@ private int unreadCount = 3;
     private javax.swing.JTextField House1Price_Text7;
     private javax.swing.JTextField House1Price_Text8;
     private javax.swing.JButton Iconlogo_Button;
-    private javax.swing.JTextField Info_text;
-    private javax.swing.JTextField Info_text2;
     private javax.swing.JButton Menuelogo_Button;
-    private javax.swing.JTextField MyBookingsNo_Text;
-    private javax.swing.JPanel MyBookings_Panel;
-    private javax.swing.JTextField MyBookings_Text;
+    private javax.swing.JButton Post_a_Notice;
     private javax.swing.JButton Profile_Button;
     private javax.swing.JTextField Recent1_Text;
     private javax.swing.JTextField Recent2_Text;
@@ -988,138 +686,22 @@ private int unreadCount = 3;
     private javax.swing.JButton RecommendedHouse2_BUtton8;
     private javax.swing.JButton RecommendedHouse2_BUtton9;
     private javax.swing.JTextField RecommendedHouse_Text;
-    private javax.swing.JButton SavedHouse_Button;
-    private javax.swing.JButton SearchBar_Button;
     private javax.swing.JButton SearchHouse_Button;
-    private javax.swing.JTextField TotalHouseNo_Text;
-    private javax.swing.JPanel TotalHouse_Panel;
-    private javax.swing.JTextField TotalHouse_Text;
     private javax.swing.JTextField Username_Text;
     private javax.swing.JButton ViewAll_Button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-private void initNotificationPopup() {
-    notificationPopup = new javax.swing.JPopupMenu();
-    notificationPopup.setPreferredSize(new java.awt.Dimension(320, 280));
-    
-    // Main container panel
-    javax.swing.JPanel mainContainer = new javax.swing.JPanel(new java.awt.BorderLayout());
-    mainContainer.setBackground(java.awt.Color.WHITE);
-
-    // Header Setup
-    javax.swing.JLabel header = new javax.swing.JLabel("  🔔 Notifications");
-    header.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 16));
-    header.setForeground(new java.awt.Color(15, 75, 155));
-    header.setPreferredSize(new java.awt.Dimension(320, 40));
-    header.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)));
-    mainContainer.add(header, java.awt.BorderLayout.NORTH);
-
-    // Dynamic Item List Panel
-    javax.swing.JPanel listPanel = new javax.swing.JPanel();
-    listPanel.setLayout(new javax.swing.BoxLayout(listPanel, javax.swing.BoxLayout.Y_AXIS));
-    listPanel.setBackground(java.awt.Color.WHITE);
-
-    // Load active notices from memory
-    dao.NotificationDAO notifDAO = new dao.NotificationDAO();
-    java.util.List<model.Notification> notifications = notifDAO.getNotificationsForUser(1);
-    unreadCount = (int) notifications.stream().filter(n -> !n.isRead()).count();
-    
-    header.setText("  🔔 Notifications (" + unreadCount + ")");
-
-    // Build the rows
-    for (model.Notification notif : notifications) {
-        javax.swing.JPanel item = new javax.swing.JPanel(new java.awt.BorderLayout());
-        item.setBackground(!notif.isRead() ? new java.awt.Color(235, 243, 255) : java.awt.Color.WHITE);
-        item.setBorder(javax.swing.BorderFactory.createCompoundBorder(
-            javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(220, 220, 220)),
-            javax.swing.BorderFactory.createEmptyBorder(8, 10, 8, 10)
-        ));
-        item.setPreferredSize(new java.awt.Dimension(300, 55));
-        item.setMaximumSize(new java.awt.Dimension(320, 55));
-
-        javax.swing.JLabel title = new javax.swing.JLabel(notif.getTitle());
-        title.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 13));
-
-        javax.swing.JLabel subtitle = new javax.swing.JLabel(notif.getMessage());
-        subtitle.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 11));
-        subtitle.setForeground(java.awt.Color.GRAY);
-
-        javax.swing.JPanel textPanel = new javax.swing.JPanel(new java.awt.GridLayout(2, 1));
-        textPanel.setOpaque(false);
-        textPanel.add(title);
-        textPanel.add(subtitle);
-
-        if (!notif.isRead()) {
-            javax.swing.JLabel dot = new javax.swing.JLabel("●");
-            dot.setForeground(new java.awt.Color(15, 75, 155));
-            item.add(dot, java.awt.BorderLayout.EAST);
-        }
-        item.add(textPanel, java.awt.BorderLayout.CENTER);
-
-        // Click Handler
-        final model.Notification clickedNotif = notif;
-        item.setCursor(java.awt.Cursor.getPredefinedCursor(java.awt.Cursor.HAND_CURSOR));
-        item.addMouseListener(new java.awt.event.MouseAdapter() {
-            @Override
-            public void mouseClicked(java.awt.event.MouseEvent e) {
-                notificationPopup.setVisible(false);
-                javax.swing.JOptionPane.showMessageDialog(
-                    null,
-                    clickedNotif.getTitle() + "\n" + clickedNotif.getMessage(),
-                    "Notification Details",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE
-                );
-            }
-        });
-        listPanel.add(item);
-    }
-
-    // FIX FOR SCROLLING: Wrap the list inside a JScrollPane
-    javax.swing.JScrollPane scrollPane = new javax.swing.JScrollPane(listPanel);
-    scrollPane.setBorder(null);
-    scrollPane.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-    scrollPane.setVerticalScrollBarPolicy(javax.swing.JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-    mainContainer.add(scrollPane, java.awt.BorderLayout.CENTER);
-
-    // Footer actions
-    javax.swing.JButton markAllRead = new javax.swing.JButton("Mark all as read");
-    markAllRead.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
-    markAllRead.setForeground(new java.awt.Color(15, 75, 155));
-    markAllRead.setBackground(java.awt.Color.WHITE);
-    markAllRead.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 10, 8, 10));
-    markAllRead.addActionListener(e -> {
-        notifDAO.markAllAsRead(1);
-        unreadCount = 0;
-        notificationPopup.setVisible(false);
-        notificationPopup.removeAll();
-        initNotificationPopup();
-    });
-    
-    mainContainer.add(markAllRead, java.awt.BorderLayout.SOUTH);
-    notificationPopup.add(mainContainer);  
-}
 }
