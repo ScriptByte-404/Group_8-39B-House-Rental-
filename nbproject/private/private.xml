@@ -5,10 +5,8 @@
         <group>
             <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/view/Login.java</file>
             <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/view/Admin_login.java</file>
-            <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/view/DashBoard.java</file>
-            <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/view/profile.java</file>
-            <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/controller/DashboardController.java</file>
-            <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/dao/DashboardDao.java</file>
+            <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/view/profileUser.java</file>
+            <file>file:/C:/Users/rojan/OneDrive/Desktop/Group_8-39B-House-Rental-/src/view/profileUserEdit.java</file>
         </group>
     </open-files>
 </project-private>
