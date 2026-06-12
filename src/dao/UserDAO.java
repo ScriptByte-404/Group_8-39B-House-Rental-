@@ -1,6 +1,7 @@
 package dao;
 
-import Database.MysqlConnector;
+
+import database.MysqlConnector;
 import java.sql.*;
 import model.logindata;
 import org.mindrot.jbcrypt.BCrypt;
