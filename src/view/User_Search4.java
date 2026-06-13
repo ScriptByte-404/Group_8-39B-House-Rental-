@@ -1,3 +1,6 @@
+package view;
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -7,12 +10,14 @@
  *
  * @author user
  */
-public class User_Search1 extends javax.swing.JFrame {
+public class User_Search4 extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Ghar_sathi.class.getName());
 
-  
-    public User_Search1() {
+    /**
+     * Creates new form Ghar_sathi
+     */
+    public User_Search4() {
         initComponents();
     }
 
@@ -112,25 +117,25 @@ public class User_Search1 extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(204, 204, 204), null));
         jPanel2.setLayout(null);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Villa1.jpg"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house4.png"))); // NOI18N
         jLabel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
         jPanel2.add(jLabel17);
         jLabel17.setBounds(20, 40, 670, 400);
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/villa 1 close up.jpg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house4 bedroom.png"))); // NOI18N
         jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel2.add(jLabel18);
         jLabel18.setBounds(470, 450, 150, 90);
 
         jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/villa 1 back .jpg"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house4 kitchen.png"))); // NOI18N
         jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel2.add(jLabel19);
         jLabel19.setBounds(70, 450, 150, 90);
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/villa 1 back .jpg"))); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/house4 inside.png"))); // NOI18N
         jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         jPanel2.add(jLabel20);
         jLabel20.setBounds(270, 450, 150, 90);
@@ -158,23 +163,23 @@ public class User_Search1 extends javax.swing.JFrame {
         jButton3.setBounds(10, 10, 140, 16);
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semilight", 1, 36)); // NOI18N
-        jLabel21.setText("Modern Apartment");
+        jLabel21.setText("Commercial Building");
         jPanel2.add(jLabel21);
-        jLabel21.setBounds(770, 30, 330, 50);
+        jLabel21.setBounds(770, 30, 350, 50);
 
         jLabel22.setBackground(new java.awt.Color(255, 255, 255));
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel22.setText("Lalitpur-6, Kathmandu");
+        jLabel22.setText("Baluwatar-4, Kathmandu");
         jLabel22.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel2.add(jLabel22);
-        jLabel22.setBounds(770, 70, 190, 25);
+        jLabel22.setBounds(770, 70, 210, 25);
 
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(102, 153, 255));
-        jLabel23.setText("Rs 55,000/ month");
+        jLabel23.setText("Rs 2,30,000/ month");
         jPanel2.add(jLabel23);
-        jLabel23.setBounds(770, 100, 220, 32);
+        jLabel23.setBounds(770, 100, 240, 32);
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/size1.png"))); // NOI18N
         jLabel24.setText("1200 sq/ft");
