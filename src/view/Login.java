@@ -43,37 +43,28 @@ public class Login extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         btnUser = new javax.swing.JButton();
         btnAdmin = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
         txtUsername = new javax.swing.JTextField();
         btnForgetPassword = new javax.swing.JButton();
@@ -142,18 +133,23 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel44);
         jLabel44.setBounds(50, 640, 350, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HouseBg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 100, 540, 720);
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GharSathi_Logo.png"))); // NOI18N
         jLabel31.setText("jLabel31");
         jPanel1.add(jLabel31);
         jLabel31.setBounds(180, 40, 120, 120);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 544, 864);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/User.png"))); // NOI18N
+        jLabel6.setText("jLabel4");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(670, 210, 40, 40);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("Username / Email");
@@ -168,13 +164,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel43);
         jLabel43.setBounds(60, 640, 350, 30);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Arrow left.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Arrow left.png"))); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(740, 310, 70, 20);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__2_-removebg-preview_1.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1260, 560, 50, 40);
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel12.setText("Login");
@@ -202,13 +194,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel18);
         jLabel18.setBounds(40, 60, 880, 40);
 
-        jLabel19.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(11, 75, 159));
-        jLabel19.setText("House Rental System");
-        jLabel19.setPreferredSize(new java.awt.Dimension(635, 244));
-        getContentPane().add(jLabel19);
-        jLabel19.setBounds(40, 30, 880, 40);
-
         jLabel20.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(11, 75, 159));
         jLabel20.setText("House Rental System");
@@ -228,18 +213,13 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel28);
         jLabel28.setBounds(60, 740, 680, 20);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(670, 210, 40, 40);
-
         jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel29.setText("using GharSathi .     ");
         jLabel29.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel29);
         jLabel29.setBounds(60, 740, 680, 20);
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__3_-removebg-preview.png"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Admin.png"))); // NOI18N
         jLabel37.setText("jLabel4");
         getContentPane().add(jLabel37);
         jLabel37.setBounds(890, 210, 50, 40);
@@ -268,36 +248,6 @@ public class Login extends javax.swing.JFrame {
         btnAdmin.addActionListener(this::btnAdminActionPerformed);
         getContentPane().add(btnAdmin);
         btnAdmin.setBounds(880, 200, 210, 60);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel6.setText("jLabel4");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(670, 210, 40, 40);
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel21.setText("jLabel4");
-        getContentPane().add(jLabel21);
-        jLabel21.setBounds(890, 210, 40, 40);
-
-        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel32.setText("jLabel4");
-        getContentPane().add(jLabel32);
-        jLabel32.setBounds(670, 210, 40, 40);
-
-        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel33.setText("jLabel4");
-        getContentPane().add(jLabel33);
-        jLabel33.setBounds(670, 210, 40, 40);
-
-        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel34.setText("jLabel4");
-        getContentPane().add(jLabel34);
-        jLabel34.setBounds(670, 210, 40, 40);
-
-        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download-removebg-preview_1.png"))); // NOI18N
-        jLabel35.setText("jLabel4");
-        getContentPane().add(jLabel35);
-        jLabel35.setBounds(670, 210, 40, 40);
 
         jLabel36.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel36.setText("WELCOME TO");
@@ -340,10 +290,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel42);
         jLabel42.setBounds(60, 640, 350, 30);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(1260, 440, 40, 40);
-
         txtPassword.addActionListener(this::txtPasswordActionPerformed);
         getContentPane().add(txtPassword);
         txtPassword.setBounds(660, 560, 650, 50);
@@ -374,22 +320,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     LoginController controller = new LoginController();
-
     boolean success = controller.loginUser(usernameOrEmail, password);
 
     if (success) {
-
         JOptionPane.showMessageDialog(this, "Login Successful!");
-
-        // OPEN DASHBOARD
-        DashBoard dash = new DashBoard();
-        dash.setVisible(true);
-
-        // CLOSE LOGIN WINDOW
+        controller.openDashBoard();   // <-- CHANGED: was "new DashBoard()"
         this.dispose();
-
     } else {
-
         JOptionPane.showMessageDialog(this, "Invalid username or password!");
     }
 
@@ -397,11 +334,15 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
-        // TODO add your handling code here:
+    // TODO add your handling code here:
     }//GEN-LAST:event_btnUserActionPerformed
 
     private void btnAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminActionPerformed
-        // TODO add your handling code here:
+
+    AdminLogin adminLogin = new AdminLogin();
+    adminLogin.setVisible(true);
+
+    this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnAdminActionPerformed
 
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
@@ -457,10 +398,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -471,15 +409,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -489,7 +422,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtUsername;

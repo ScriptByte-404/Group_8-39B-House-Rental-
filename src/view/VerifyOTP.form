@@ -181,7 +181,7 @@
         <Component class="javax.swing.JLabel" name="jLabel37">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/Rectangle 4_1.png"/>
+              <Image iconType="3" name="/images/GharSathi_Logo.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel31"/>
           </Properties>
@@ -210,7 +210,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"/>
+              <Image iconType="3" name="/images/HouseBg.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>
@@ -250,7 +250,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="640" y="140" width="880" height="40"/>
+          <AbsoluteConstraints x="640" y="130" width="880" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -293,7 +293,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="690" y="610" width="580" height="60"/>
+          <AbsoluteConstraints x="710" y="610" width="550" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -451,7 +451,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="700" y="700" width="570" height="60"/>
+          <AbsoluteConstraints x="710" y="700" width="550" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -508,12 +508,12 @@
     <Component class="javax.swing.JLabel" name="jLabel13">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/view/ChatGPT Imag PM_1.png"/>
+          <Image iconType="3" name="/images/Email_Bg.png"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="780" y="170" width="500" height="410"/>
+          <AbsoluteConstraints x="820" y="140" width="500" height="460"/>
         </Constraint>
       </Constraints>
     </Component>

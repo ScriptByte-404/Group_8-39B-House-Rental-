@@ -4,6 +4,7 @@ package dao;
 import database.MysqlConnector;
 import java.sql.*;
 import model.logindata;
+import model.User;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class UserDAO {
@@ -13,14 +14,17 @@ public class UserDAO {
     // REGISTER USER (with BCrypt hashing)
     public boolean createUser(logindata user) {
         Connection conn = mysql.openConnection();
-        String sql = "INSERT INTO users(username, email, password) VALUES (?,?,?)";
+        String sql = "INSERT INTO users(name, username, email, password, role) VALUES (?,?,?,?,?)";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            // Use username as name for now since registration form doesn't have separate name field
             pstm.setString(1, user.getUsername());
-            pstm.setString(2, user.getEmail());
+            pstm.setString(2, user.getUsername());
+            pstm.setString(3, user.getEmail());
 
             // HASH password before saving
             String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-            pstm.setString(3, hashedPassword);
+            pstm.setString(4, hashedPassword);
+            pstm.setString(5, "customer"); // Default role
 
             int rows = pstm.executeUpdate();
             return rows > 0;
@@ -33,9 +37,10 @@ public class UserDAO {
     }
 
     // LOGIN (BCrypt password check)
-  public boolean checkUser(String usernameOrEmail, String password) {
+  public User checkUser(String usernameOrEmail, String password) {
     Connection conn = mysql.openConnection();
-    String sql = "SELECT password FROM users WHERE (username = ? OR email = ?)";
+    // Try with new schema first, fallback to old schema
+    String sql = "SELECT id, name, username, email, phone, password, role, status FROM users WHERE (username = ? OR email = ?)";
     try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
         pstmt.setString(1, usernameOrEmail);
         pstmt.setString(2, usernameOrEmail);
@@ -45,15 +50,54 @@ public class UserDAO {
 
             // Guard: if not a valid BCrypt hash, reject login
             if (storedHash == null || !storedHash.startsWith("$2a$") && !storedHash.startsWith("$2b$")) {
-                return false;
+                return null;
             }
 
-            return BCrypt.checkpw(password, storedHash);
+            if (BCrypt.checkpw(password, storedHash)) {
+                User user = new User();
+                user.setUserId(result.getInt("id"));
+                user.setFullName(result.getString("name"));
+                user.setUsername(result.getString("username"));
+                user.setEmail(result.getString("email"));
+                user.setPhone(result.getString("phone"));
+                user.setRole(result.getString("role"));
+                user.setStatus(result.getString("status"));
+                return user;
+            }
         }
-        return false;
-    } catch (SQLException | IllegalArgumentException ex) {  // <-- catch both!
-        System.out.println(ex);
-        return false;
+        return null;
+    } catch (SQLException ex) {
+        // Fallback to old schema if new columns don't exist
+        try {
+            String oldSql = "SELECT id, username, email, password FROM users WHERE (username = ? OR email = ?)";
+            try (PreparedStatement pstmt = conn.prepareStatement(oldSql)) {
+                pstmt.setString(1, usernameOrEmail);
+                pstmt.setString(2, usernameOrEmail);
+                ResultSet result = pstmt.executeQuery();
+                if (result.next()) {
+                    String storedHash = result.getString("password");
+
+                    // Guard: if not a valid BCrypt hash, reject login
+                    if (storedHash == null || !storedHash.startsWith("$2a$") && !storedHash.startsWith("$2b$")) {
+                        return null;
+                    }
+
+                    if (BCrypt.checkpw(password, storedHash)) {
+                        User user = new User();
+                        user.setUserId(result.getInt("id"));
+                        user.setFullName(result.getString("username")); // Use username as name
+                        user.setUsername(result.getString("username"));
+                        user.setEmail(result.getString("email"));
+                        user.setRole("customer"); // Default role
+                        return user;
+                    }
+                }
+                return null;
+            }
+        } catch (SQLException ex2) {
+            System.out.println(ex2);
+            return null;
+        }
     } finally {
         mysql.closeConnection(conn);
     }

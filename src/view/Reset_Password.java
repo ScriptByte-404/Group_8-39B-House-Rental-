@@ -151,7 +151,7 @@ public class Reset_Password extends javax.swing.JFrame {
         jPanel2.add(jLabel36);
         jLabel36.setBounds(50, 540, 350, 30);
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GharSathi_Logo.png"))); // NOI18N
         jLabel37.setText("jLabel31");
         jPanel2.add(jLabel37);
         jLabel37.setBounds(180, 40, 120, 120);
@@ -162,7 +162,7 @@ public class Reset_Password extends javax.swing.JFrame {
         jPanel2.add(jLabel38);
         jLabel38.setBounds(190, 720, 680, 20);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HouseBg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(0, 40, 540, 720);
@@ -251,7 +251,7 @@ public class Reset_Password extends javax.swing.JFrame {
         getContentPane().add(btnContinue);
         btnContinue.setBounds(700, 730, 570, 50);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ChatGPT Image M PM.png"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/reset_pw_icon.png"))); // NOI18N
         getContentPane().add(jLabel14);
         jLabel14.setBounds(760, 190, 470, 400);
 

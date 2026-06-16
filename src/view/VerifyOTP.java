@@ -241,7 +241,7 @@ private void resendOTP() {
         jPanel2.add(jLabel36);
         jLabel36.setBounds(50, 540, 350, 30);
 
-        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GharSathi_Logo.png"))); // NOI18N
         jLabel37.setText("jLabel31");
         jPanel2.add(jLabel37);
         jLabel37.setBounds(180, 40, 120, 120);
@@ -252,7 +252,7 @@ private void resendOTP() {
         jPanel2.add(jLabel38);
         jLabel38.setBounds(180, 720, 680, 20);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HouseBg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(0, 40, 540, 720);
@@ -270,7 +270,7 @@ private void resendOTP() {
         jLabel4.setText("Enter the OTP below to continue");
         jLabel4.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(640, 140, 880, 40);
+        jLabel4.setBounds(640, 130, 880, 40);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel6.setText("Please verify your OTP");
@@ -285,7 +285,7 @@ private void resendOTP() {
         Verify_OTP.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Verify_OTP.addActionListener(this::Verify_OTPActionPerformed);
         getContentPane().add(Verify_OTP);
-        Verify_OTP.setBounds(690, 610, 580, 60);
+        Verify_OTP.setBounds(710, 610, 550, 60);
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(11, 75, 159));
@@ -343,7 +343,7 @@ private void resendOTP() {
         btnBackToLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBackToLogin.addActionListener(this::btnBackToLoginActionPerformed);
         getContentPane().add(btnBackToLogin);
-        btnBackToLogin.setBounds(700, 700, 570, 60);
+        btnBackToLogin.setBounds(710, 700, 550, 60);
 
         txt1.addActionListener(this::txt1ActionPerformed);
         getContentPane().add(txt1);
@@ -365,9 +365,9 @@ private void resendOTP() {
         getContentPane().add(txt4);
         txt4.setBounds(990, 540, 70, 60);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ChatGPT Imag PM_1.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Email_Bg.png"))); // NOI18N
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(780, 170, 500, 410);
+        jLabel13.setBounds(820, 140, 500, 460);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

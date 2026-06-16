@@ -4,6 +4,8 @@
  */
 package view;
 
+import controller.HouseController;
+
 /**
  *
  * @author Safal
@@ -37,7 +39,6 @@ public AdminDashboard() {
         Dashboard_Button = new javax.swing.JButton();
         House1Price_Text = new javax.swing.JTextField();
         House1Name_Text = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         RecommendedHouse2_BUtton1 = new javax.swing.JButton();
         ViewAll_Button = new javax.swing.JButton();
         RecommendedHouse_Text = new javax.swing.JTextField();
@@ -82,7 +83,6 @@ public AdminDashboard() {
         Menuelogo_Button = new javax.swing.JButton();
         Username_Text = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        Iconlogo_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1536, 864));
@@ -102,10 +102,10 @@ public AdminDashboard() {
         getContentPane().add(GharSathi_Text);
         GharSathi_Text.setBounds(110, 20, 220, 50);
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GharSathi_Logo.png"))); // NOI18N
         jLabel31.setText("jLabel31");
         getContentPane().add(jLabel31);
-        jLabel31.setBounds(-20, -10, 120, 120);
+        jLabel31.setBounds(-20, 0, 120, 100);
 
         SearchHouse_Button.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         SearchHouse_Button.setText("Search Houses");
@@ -155,10 +155,6 @@ public AdminDashboard() {
         House1Name_Text.addActionListener(this::House1Name_TextActionPerformed);
         getContentPane().add(House1Name_Text);
         House1Name_Text.setBounds(70, 710, 230, 40);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download (2).jpg"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(80, 590, 200, 130);
 
         RecommendedHouse2_BUtton1.setBackground(new java.awt.Color(243, 243, 243));
         RecommendedHouse2_BUtton1.addActionListener(this::RecommendedHouse2_BUtton1ActionPerformed);
@@ -279,8 +275,6 @@ public AdminDashboard() {
         House1Name_Text3.addActionListener(this::House1Name_Text3ActionPerformed);
         getContentPane().add(House1Name_Text3);
         House1Name_Text3.setBounds(390, 710, 220, 40);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download (3).jpg"))); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(390, 590, 240, 120);
 
@@ -357,8 +351,6 @@ public AdminDashboard() {
         House1Name_Text6.addActionListener(this::House1Name_Text6ActionPerformed);
         getContentPane().add(House1Name_Text6);
         House1Name_Text6.setBounds(680, 710, 230, 40);
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download (4).jpg"))); // NOI18N
         getContentPane().add(jLabel12);
         jLabel12.setBounds(690, 590, 230, 120);
 
@@ -424,7 +416,7 @@ public AdminDashboard() {
         jLabel15.setBounds(40, 510, 930, 280);
 
         Menuelogo_Button.setBackground(new java.awt.Color(243, 243, 243));
-        Menuelogo_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Vector (1).png"))); // NOI18N
+        Menuelogo_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Menu.png"))); // NOI18N
         Menuelogo_Button.setBorder(null);
         Menuelogo_Button.addActionListener(this::Menuelogo_ButtonActionPerformed);
         getContentPane().add(Menuelogo_Button);
@@ -438,17 +430,9 @@ public AdminDashboard() {
         getContentPane().add(Username_Text);
         Username_Text.setBounds(1370, 50, 116, 20);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/account_circle.png"))); // NOI18N
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1320, 30, 40, 60);
-
-        Iconlogo_Button.setBackground(new java.awt.Color(242, 242, 242));
-        Iconlogo_Button.setForeground(new java.awt.Color(242, 242, 242));
-        Iconlogo_Button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__6_-removebg-preview_1.png"))); // NOI18N
-        Iconlogo_Button.setBorder(null);
-        Iconlogo_Button.addActionListener(this::Iconlogo_ButtonActionPerformed);
-        getContentPane().add(Iconlogo_Button);
-        Iconlogo_Button.setBounds(1220, 20, 80, 80);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -462,7 +446,7 @@ public AdminDashboard() {
     }//GEN-LAST:event_SearchHouse_ButtonActionPerformed
 
     private void Bookings_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bookings_ButtonActionPerformed
-        // TODO add your handling code here:
+     new AdminHouseApproval().setVisible(true);   // TODO add your handling code here:
     }//GEN-LAST:event_Bookings_ButtonActionPerformed
 
     private void Post_a_NoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Post_a_NoticeActionPerformed
@@ -609,18 +593,15 @@ public AdminDashboard() {
     }//GEN-LAST:event_Recent3_TextActionPerformed
 
     private void Menuelogo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menuelogo_ButtonActionPerformed
-        // TODO add your handling code here:
+     HouseController houseController = new HouseController();
+
+    DashBoard dashboard = new DashBoard(houseController);
+    dashboard.setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_Menuelogo_ButtonActionPerformed
 
     private void Username_TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_TextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Username_TextActionPerformed
-
-    private void Iconlogo_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Iconlogo_ButtonActionPerformed
-
-    // no notification popup for admin
-    // TODO add your handling code here:
-    }//GEN-LAST:event_Iconlogo_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -639,9 +620,11 @@ public AdminDashboard() {
     }
 
     /* CRUCIAL: Opens both screens under the exact same process session */
+    // FIXED
     java.awt.EventQueue.invokeLater(() -> {
         new AdminDashboard().setVisible(true);
-        new DashBoard().setVisible(true);
+        controller.HouseController houseController = new controller.HouseController();
+        new DashBoard(houseController).setVisible(true);
     });
 
 }
@@ -668,7 +651,6 @@ public AdminDashboard() {
     private javax.swing.JTextField House1Price_Text6;
     private javax.swing.JTextField House1Price_Text7;
     private javax.swing.JTextField House1Price_Text8;
-    private javax.swing.JButton Iconlogo_Button;
     private javax.swing.JButton Menuelogo_Button;
     private javax.swing.JButton Post_a_Notice;
     private javax.swing.JButton Profile_Button;
@@ -698,7 +680,6 @@ public AdminDashboard() {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;

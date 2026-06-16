@@ -49,15 +49,10 @@ public class Registration extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnSignup = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -80,7 +75,7 @@ public class Registration extends javax.swing.JFrame {
         jLabel22.setText("Register to rent your  ");
         jLabel22.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel22);
-        jLabel22.setBounds(60, 690, 680, 40);
+        jLabel22.setBounds(60, 650, 680, 40);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setText("Find your perfect home");
@@ -104,40 +99,40 @@ public class Registration extends javax.swing.JFrame {
         jLabel23.setText("using GharSathi .    ");
         jLabel23.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel23);
-        jLabel23.setBounds(60, 740, 180, 20);
+        jLabel23.setBounds(60, 700, 180, 30);
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel24.setText("next perfect place to live ");
         jLabel24.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel24);
-        jLabel24.setBounds(60, 720, 680, 20);
+        jLabel24.setBounds(60, 680, 680, 30);
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(53, 100, 166));
         jLabel25.setText("Need Help");
         jLabel25.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel25);
-        jLabel25.setBounds(130, 790, 680, 20);
+        jLabel25.setBounds(130, 750, 680, 30);
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel26.setText("issues ?");
         jLabel26.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel26);
-        jLabel26.setBounds(60, 790, 680, 20);
+        jLabel26.setBounds(60, 750, 680, 30);
 
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(53, 100, 166));
         jLabel30.setText("Register,");
         jLabel30.setPreferredSize(new java.awt.Dimension(635, 244));
         jPanel1.add(jLabel30);
-        jLabel30.setBounds(60, 640, 350, 30);
+        jLabel30.setBounds(60, 600, 350, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HouseBg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 100, 540, 720);
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GharSathi_Logo.png"))); // NOI18N
         jLabel31.setText("jLabel31");
         jPanel1.add(jLabel31);
         jLabel31.setBounds(180, 40, 120, 120);
@@ -172,18 +167,6 @@ public class Registration extends javax.swing.JFrame {
         getContentPane().add(btnSignup);
         btnSignup.setBounds(660, 710, 160, 50);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/account_circle.png"))); // NOI18N
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(1230, 390, 40, 40);
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__1_-removebg-preview_1.png"))); // NOI18N
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(1230, 510, 60, 50);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__2_-removebg-preview_1.png"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1240, 610, 50, 50);
-
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel12.setText("WELCOME TO");
         jLabel12.setPreferredSize(new java.awt.Dimension(635, 244));
@@ -208,20 +191,6 @@ public class Registration extends javax.swing.JFrame {
         jLabel10.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel10);
         jLabel10.setBounds(650, 90, 880, 40);
-
-        jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(11, 75, 159));
-        jLabel18.setText("House Rental System");
-        jLabel18.setPreferredSize(new java.awt.Dimension(635, 244));
-        getContentPane().add(jLabel18);
-        jLabel18.setBounds(40, 60, 880, 40);
-
-        jLabel19.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(11, 75, 159));
-        jLabel19.setText("House Rental System");
-        jLabel19.setPreferredSize(new java.awt.Dimension(635, 244));
-        getContentPane().add(jLabel19);
-        jLabel19.setBounds(40, 30, 880, 40);
 
         jLabel20.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(11, 75, 159));
@@ -279,31 +248,36 @@ public class Registration extends javax.swing.JFrame {
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
 
+
     String username = TxtUsername.getText().trim();
     String email = TxtEmailORphoneNo.getText().trim();
     String password = new String(txtPassword.getPassword()).trim();
 
-    // basic validation
-    if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill all fields!");
+    UserController controller = new UserController();
+
+    // STEP 1: validate username / email / password rules (controller decides)
+    String error = controller.validateRegistration(username, email, password);
+    if (error != null) {
+        JOptionPane.showMessageDialog(this, error);
         return;
     }
 
+    // STEP 2: prevent duplicate accounts
+    if (controller.emailExists(email)) {
+        JOptionPane.showMessageDialog(this, "An account with this email already exists!");
+        return;
+    }
+
+    // STEP 3: register
     try {
         logindata user = new logindata(username, email, password);
-
-        UserController controller = new UserController();
-
         boolean success = controller.registerUser(user);
 
         if (success) {
             JOptionPane.showMessageDialog(this, "User Registered Successfully!");
-            
-            // clear fields after success
             TxtUsername.setText("");
             TxtEmailORphoneNo.setText("");
             txtPassword.setText("");
-
         } else {
             JOptionPane.showMessageDialog(this, "Registration Failed!");
         }
@@ -311,6 +285,7 @@ public class Registration extends javax.swing.JFrame {
     } catch (HeadlessException e) {
         JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
     }
+
 
 
     }//GEN-LAST:event_btnSignupActionPerformed
@@ -373,9 +348,6 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -393,8 +365,6 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables

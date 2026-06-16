@@ -1,6 +1,6 @@
 package gharsathi;
 
-import Database.MysqlConnector;
+import database.MysqlConnector;
 import java.sql.Connection;
 
 public class GharSathi {

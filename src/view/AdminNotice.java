@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import dao.NoticeDAO;
+import model.Notice;
+import java.util.List;
 
 /**
  *
@@ -11,15 +14,20 @@ package view;
 public class AdminNotice extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminNotice.class.getName());
-
+ 
+    private final NoticeDAO noticeDAO = new NoticeDAO();
+    private javax.swing.JTextArea noticeListArea;
+ 
     /**
      * Creates new form AdminNotice1
      */
  
     public AdminNotice() {
     initComponents();
-   
+    setupNoticeList();
+    loadNotices();
 }
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -119,12 +127,12 @@ public class AdminNotice extends javax.swing.JFrame {
         jPanel2.add(jLabel44);
         jLabel44.setBounds(50, 640, 350, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HouseBg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(-20, 100, 540, 720);
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Untitled_-_Custom-removebg-preview.png"))); // NOI18N
         jLabel31.setText("jLabel31");
         jPanel2.add(jLabel31);
         jLabel31.setBounds(180, 40, 120, 120);
@@ -146,7 +154,7 @@ public class AdminNotice extends javax.swing.JFrame {
         jPanel4.add(jLabel28);
         jLabel28.setBounds(40, 20, 680, 40);
 
-        Post_Btn.setBackground(new java.awt.Color(0, 51, 204));
+        Post_Btn.setBackground(new java.awt.Color(43, 109, 80));
         Post_Btn.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Post_Btn.setForeground(new java.awt.Color(255, 255, 255));
         Post_Btn.setText("Post Notice");
@@ -264,31 +272,81 @@ public class AdminNotice extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+  private void setupNoticeList() {
+        noticeListArea = new javax.swing.JTextArea();
+        noticeListArea.setEditable(false);
+        noticeListArea.setLineWrap(true);
+        noticeListArea.setWrapStyleWord(true);
+        noticeListArea.setFont(new java.awt.Font("Segoe UI", 0, 16));
+ 
+        javax.swing.JScrollPane scrollPane = new javax.swing.JScrollPane(noticeListArea);
+        scrollPane.setBounds(580, 640, 900, 65);
+ 
+        jPanel1.add(scrollPane);
+        jPanel1.setComponentZOrder(scrollPane, 0);
+    }
+ private void loadNotices() {
+        if (noticeListArea == null) {
+            return;
+        }
+ 
+        List<Notice> notices = noticeDAO.getAllNotices();
+ 
+        if (notices.isEmpty()) {
+            noticeListArea.setText("No notices posted yet.");
+            return;
+        }
+ 
+        StringBuilder sb = new StringBuilder();
+        for (Notice n : notices) {
+            sb.append("• ").append(n.getTitle());
+            if (n.getCreatedAt() != null) {
+                sb.append("  (").append(n.getCreatedAt()).append(")");
+            }
+            sb.append("\n");
+        }
+ 
+        noticeListArea.setText(sb.toString());
+        noticeListArea.setCaretPosition(0);
+    }
     private void Close_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Close_BtnActionPerformed
-                                         
+      AdminDashboard dashboard = new AdminDashboard();
+    dashboard.setVisible(true);                                   
     this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_Close_BtnActionPerformed
 
     private void Post_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Post_BtnActionPerformed
-                                        
-    // 1. READ what you actually type into the text field
-    String message = Notice_Txtfeild.getText().trim();
-    
-    // 2. Stop empty posts or default placeholder text
-    if (message.isEmpty() || message.equals("jTextField1")) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Please type a notice message first!", "Warning", javax.swing.JOptionPane.WARNING_MESSAGE);
+        String title = Notice_Txtfeild.getText().trim();
+ 
+    if (title.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "Please enter a notice before posting.",
+                "Empty Notice",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
         return;
     }
-    
-    // 3. Save your typed message directly into the shared memory!
-    model.NoticeStore.addNotice(message);
-    System.out.println("Success! Saved message to memory: " + message);
-    
-    // 4. Alert user and clear the box
-    javax.swing.JOptionPane.showMessageDialog(this, "Notice posted successfully!", "Success", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-    Notice_Txtfeild.setText("");
+ 
+    // 2. Save it to the database via NoticeDAO (title and message are the same field for now)
+    boolean success = noticeDAO.insertNotice(title, title);
+ 
+    if (success) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "Notice posted successfully.",
+                "Success",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        Notice_Txtfeild.setText("");
+        loadNotices();
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "Failed to post notice. Please try again.",
+                "Error",
+                javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+ 
+                                    
+    // 1. READ what you actually type into the text field
+
 
     }//GEN-LAST:event_Post_BtnActionPerformed
 
@@ -309,12 +367,7 @@ public class AdminNotice extends javax.swing.JFrame {
      */
     
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
+     try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -325,11 +378,10 @@ public class AdminNotice extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+ 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new AdminNotice().setVisible(true));
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Close_Btn;
     private javax.swing.JTextField Notice_Txtfeild;

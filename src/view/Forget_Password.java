@@ -120,7 +120,7 @@ public class Forget_Password extends javax.swing.JFrame {
         jPanel1.add(jLabel30);
         jLabel30.setBounds(50, 540, 350, 30);
 
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Rectangle 4_1.png"))); // NOI18N
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GharSathi_Logo.png"))); // NOI18N
         jLabel31.setText("jLabel31");
         jPanel1.add(jLabel31);
         jLabel31.setBounds(180, 40, 120, 120);
@@ -131,7 +131,7 @@ public class Forget_Password extends javax.swing.JFrame {
         jPanel1.add(jLabel33);
         jLabel33.setBounds(190, 720, 680, 20);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/_7D47BD78-A051-46AC-9AA6-94ED3E6D9A1F_-removebg-preview 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/HouseBg.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(0, 60, 540, 720);
@@ -143,7 +143,7 @@ public class Forget_Password extends javax.swing.JFrame {
         jLabel3.setText("OR");
         jLabel3.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(960, 670, 40, 30);
+        jLabel3.setBounds(960, 700, 40, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("Enter your registerd email ");
@@ -164,18 +164,18 @@ public class Forget_Password extends javax.swing.JFrame {
         btnSignup.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnSignup.addActionListener(this::btnSignupActionPerformed);
         getContentPane().add(btnSignup);
-        btnSignup.setBounds(690, 610, 580, 50);
+        btnSignup.setBounds(690, 640, 580, 50);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/download__1_-removebg-preview_1.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Email_icon.png"))); // NOI18N
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(1240, 540, 60, 50);
+        jLabel9.setBounds(1240, 570, 60, 50);
 
         jLabel10.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(11, 75, 159));
         jLabel10.setText("Forget Password");
         jLabel10.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(650, 30, 880, 40);
+        jLabel10.setBounds(650, 30, 880, 50);
 
         jLabel18.setFont(new java.awt.Font("Verdana", 1, 36)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(11, 75, 159));
@@ -224,7 +224,7 @@ public class Forget_Password extends javax.swing.JFrame {
 
         txtEmail.addActionListener(this::txtEmailActionPerformed);
         getContentPane().add(txtEmail);
-        txtEmail.setBounds(650, 540, 650, 50);
+        txtEmail.setBounds(660, 570, 650, 50);
 
         btnBackToLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnBackToLogin.setForeground(new java.awt.Color(51, 51, 51));
@@ -232,13 +232,13 @@ public class Forget_Password extends javax.swing.JFrame {
         btnBackToLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBackToLogin.addActionListener(this::btnBackToLoginActionPerformed);
         getContentPane().add(btnBackToLogin);
-        btnBackToLogin.setBounds(700, 710, 570, 50);
+        btnBackToLogin.setBounds(700, 730, 570, 50);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel8.setText("Enter your email");
+        jLabel8.setText("Enter your registered email");
         jLabel8.setPreferredSize(new java.awt.Dimension(635, 244));
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(650, 490, 220, 40);
+        jLabel8.setBounds(660, 530, 340, 40);
 
         jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel32.setText("and we'll send you  a One_");
@@ -246,9 +246,9 @@ public class Forget_Password extends javax.swing.JFrame {
         getContentPane().add(jLabel32);
         jLabel32.setBounds(650, 180, 880, 40);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/ChatGPT ImagePM.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Email_Bg.png"))); // NOI18N
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(770, 220, 440, 360);
+        jLabel12.setBounds(790, 230, 480, 400);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
