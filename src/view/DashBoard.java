@@ -169,7 +169,7 @@ public DashBoard(HouseController controller) {
         Explore_Button.setBackground(new java.awt.Color(15, 75, 155));
         Explore_Button.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Explore_Button.setForeground(new java.awt.Color(255, 255, 255));
-        Explore_Button.setText("Explore Houses");
+        Explore_Button.setText("List Your Property");
         Explore_Button.addActionListener(this::Explore_ButtonActionPerformed);
         jPanel1.add(Explore_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 190, 50));
 
@@ -568,6 +568,30 @@ public DashBoard(HouseController controller) {
     }//GEN-LAST:event_Dashboard_ButtonActionPerformed
 
     private void Explore_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Explore_ButtonActionPerformed
+
+    User currentUser = SessionManager.getCurrentUser();
+    if (currentUser == null) {
+        JOptionPane.showMessageDialog(this, "Please login first!");
+        return;
+    }
+
+    // Update role in DB
+    dao.UserDAO userDAO = new dao.UserDAO();
+    boolean updated = userDAO.updateUserRole(currentUser.getUserId(), "owner");
+
+    if (updated) {
+        // Update session too
+        currentUser.setRole("owner");
+        SessionManager.setCurrentUser(currentUser);
+
+        JOptionPane.showMessageDialog(this, "You are now registered as a Landlord!");
+
+        // Open owner page
+        new OwnerBookingsApproval().setVisible(true);
+        this.dispose();
+    } else {
+        JOptionPane.showMessageDialog(this, "Failed to update role. Try again.");
+    }
         // TODO add your handling code here:
     }//GEN-LAST:event_Explore_ButtonActionPerformed
 

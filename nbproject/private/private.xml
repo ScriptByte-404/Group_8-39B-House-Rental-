@@ -16,6 +16,17 @@
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/dao/HouseDAO.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Forget_Password.java</file>
             <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/database/MysqlConnector.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Login.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/Searches_Customer.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/HouseCardPanel1.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/dao/BookingDAO.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/model/Booking.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/BookingCardPanel.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/AdminNotice.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/OwnerBookingCardPanel.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/OwnerBookingsApproval.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/AdminHouseCardPanel.java</file>
+            <file>file:/C:/Users/User/Desktop/Group_8-39B-House-Rental-/src/view/BookingActionListener.java</file>
         </group>
     </open-files>
 </project-private>

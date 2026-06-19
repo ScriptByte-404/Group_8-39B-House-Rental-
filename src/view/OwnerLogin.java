@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
  *
  * @author Safal
  */
-public class Login extends javax.swing.JFrame {
+public class OwnerLogin extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(OwnerLogin.class.getName());
 
     /**
      * Creates new form Login
      */
-    public Login() {
+    public OwnerLogin() {
         initComponents();
     }
 
@@ -319,26 +319,6 @@ public class Login extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 
 
-    String usernameOrEmail = txtUsername.getText().trim();
-    String password = txtPassword.getText().trim();
-
-    if (usernameOrEmail.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Please fill all fields!");
-        return;
-    }
-
-    LoginController controller = new LoginController();
-    boolean success = controller.loginUser(usernameOrEmail, password);
-
-    if (success) {
-        JOptionPane.showMessageDialog(this, "Login Successful!");
-        controller.openDashBoard();   // <-- CHANGED: was "new DashBoard()"
-        this.dispose();
-    } else {
-        JOptionPane.showMessageDialog(this, "Invalid username or password!");
-    }
-
-
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserActionPerformed
@@ -396,7 +376,7 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Login().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new OwnerLogin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

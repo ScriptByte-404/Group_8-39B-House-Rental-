@@ -16,8 +16,17 @@ public class LoginController {
     }
 
     // NEW METHOD — creates HouseController outside the view
-    public void openDashBoard() {
+public void openDashBoard() {
+    User user = SessionManager.getCurrentUser();
+    if (user == null) return;
+
+    String role = user.getRole();
+
+    if ("owner".equals(role)) {
+        new view.OwnerBookingsApproval().setVisible(true);
+    } else {
         HouseController houseController = new HouseController();
         new view.DashBoard(houseController).setVisible(true);
     }
+}
 }

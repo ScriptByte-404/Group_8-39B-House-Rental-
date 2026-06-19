@@ -3,9 +3,12 @@ package dao;
 
 import database.MysqlConnector;
 import java.sql.*;
+import javax.swing.JOptionPane;
 import model.logindata;
 import model.User;
 import org.mindrot.jbcrypt.BCrypt;
+import util.SessionManager;
+import view.OwnerBookingsApproval;
 
 public class UserDAO {
 
@@ -162,7 +165,18 @@ public class UserDAO {
             mysql.closeConnection(conn);
         }
     }
-
+public boolean updateUserRole(int userId, String newRole) {
+    String sql = "UPDATE users SET role = ? WHERE id = ?";
+    try (Connection con = new MysqlConnector().openConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setString(1, newRole);
+        ps.setInt(2, userId);
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    }
+}
     // DELETE OTP AFTER USE
     public void deleteOTP(String email) {
         Connection conn = mysql.openConnection();
@@ -176,8 +190,7 @@ public class UserDAO {
             mysql.closeConnection(conn);
         }
     }
-
-    // RESET PASSWORD (with BCrypt hashing)
+   // RESET PASSWORD (with BCrypt hashing)
     public boolean updatePassword(String email, String newPassword) {
         Connection conn = mysql.openConnection();
         String sql = "UPDATE users SET password=? WHERE email=?";
@@ -197,4 +210,20 @@ public class UserDAO {
             mysql.closeConnection(conn);
         }
     }
+    public boolean createOwner(String fullName, String username, String email, String phone) {
+    String sql = "INSERT INTO users(name, username, email, phone, password, role) VALUES (?,?,?,?,?,?)";
+    try (Connection con = mysql.openConnection();
+         PreparedStatement ps = con.prepareStatement(sql)) {
+        ps.setString(1, fullName);
+        ps.setString(2, username);
+        ps.setString(3, email);
+        ps.setString(4, phone);
+        ps.setString(5, BCrypt.hashpw(password, BCrypt.gensalt()));
+        ps.setString(6, "owner");
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    }
+}
 }

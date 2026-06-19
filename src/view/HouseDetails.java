@@ -310,7 +310,7 @@ public class HouseDetails extends javax.swing.JFrame {
         Info_text3.setBorder(null);
         Info_text3.addActionListener(this::Info_text3ActionPerformed);
         jPanel1.add(Info_text3);
-        Info_text3.setBounds(570, 250, 303, 20);
+        Info_text3.setBounds(570, 260, 303, 20);
 
         acCheck.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         acCheck.setText("Air Condition");

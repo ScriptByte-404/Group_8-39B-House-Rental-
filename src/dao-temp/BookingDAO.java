@@ -2,7 +2,6 @@ package dao;
 
 import database.MysqlConnector;
 import model.Booking;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,14 +47,41 @@ public class BookingDAO {
     }
 
     /** Admin: get all bookings */
-    public List<Booking> getAllBookings() {
-        String sql = "SELECT b.id, b.house_id, b.customer_id, b.status, b.booking_date, " +
-                     "h.name AS house_name, h.location, h.price, h.images " +
-                     "FROM bookings b " +
-                     "JOIN houses h ON b.house_id = h.id " +
-                     "ORDER BY b.created_at DESC";
-        return queryBookings(sql, -1, null);
+ public List<Booking> getAllBookings() {
+
+    List<Booking> list = new ArrayList<>();
+
+    try (Connection conn = new MysqlConnector().openConnection();
+         PreparedStatement ps = conn.prepareStatement(
+             "SELECT b.*, u.name AS customer_name " +
+             "FROM bookings b " +
+             "JOIN users u ON b.customer_id = u.id"
+         );
+         ResultSet rs = ps.executeQuery()) {
+
+        while (rs.next()) {
+
+            Booking b = new Booking();
+
+            // 🔥 IMPORTANT MAPPING
+            b.setBookingId(rs.getInt("id"));
+            b.setHouseId(rs.getInt("house_id"));
+            b.setCustomerId(rs.getInt("customer_id"));
+            b.setStatus(rs.getString("status"));
+            b.setBookingDate(rs.getString("booking_date"));
+
+            // extra UI data
+            b.setCustomerName(rs.getString("customer_name"));
+
+            list.add(b);
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+
+    return list;
+}
 
     /** Update booking status: 'pending' | 'confirmed' | 'cancelled' */
     public boolean updateBookingStatus(int bookingId, String status) {
@@ -97,7 +123,45 @@ public class BookingDAO {
                      "ORDER BY b.created_at DESC";
         return queryBookings(sql, houseId, null);
     }
+/**
+     * Get all bookings for houses owned by this owner.
+     * Joins with users table to get the customer's name.
+     */
+    public List<Booking> getBookingsByOwnerId(int ownerId) {
+        String sql = "SELECT b.id, b.house_id, b.customer_id, b.status, b.booking_date, " +
+                     "h.name AS house_name, h.location, h.price, h.images, " +
+                     "u.name AS customer_name " +
+                     "FROM bookings b " +
+                     "JOIN houses h  ON b.house_id   = h.id " +
+                     "JOIN users  u  ON b.customer_id = u.id " +
+                     "WHERE h.owner_id = ? " +
+                     "ORDER BY b.created_at DESC";
 
+        List<Booking> list = new ArrayList<>();
+        try (Connection con = connector.openConnection();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, ownerId);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Booking b = new Booking();
+                    b.setId(rs.getInt("id"));
+                    b.setHouseId(rs.getInt("house_id"));
+                    b.setCustomerId(rs.getInt("customer_id"));
+                    b.setStatus(rs.getString("status"));
+                    b.setBookingDate(rs.getString("booking_date"));
+                    b.setHouseName(rs.getString("house_name"));
+                    b.setLocation(rs.getString("location"));
+                    b.setPrice(rs.getString("price"));
+                    b.setImagePath(rs.getString("images"));
+                    b.setCustomerName(rs.getString("customer_name"));
+                    list.add(b);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
     private List<Booking> queryBookings(String sql, int userId, String status) {
         List<Booking> list = new ArrayList<>();
         try (Connection con = connector.openConnection();
